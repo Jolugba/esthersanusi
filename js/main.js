@@ -484,12 +484,17 @@
     const top = $("#backToTop");
     if (top) top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
 
-    // Live phone clock (cosmetic)
-    const clock = $("#phoneClock");
-    if (clock) {
+    // Live phone clock — status bar + the big home-screen clock widget
+    const statusClock = $("#phoneClock");
+    const homeClock = $("#homeClock");
+    const homeDate = $("#homeDate");
+    if (statusClock || homeClock) {
       const tick = () => {
         const d = new Date();
-        clock.textContent = d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false });
+        const t = d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false });
+        if (statusClock) statusClock.textContent = t;
+        if (homeClock) homeClock.textContent = t;
+        if (homeDate) homeDate.textContent = "Lagos · " + d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
       };
       tick();
       setInterval(tick, 30000);
