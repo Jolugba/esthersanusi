@@ -142,8 +142,9 @@
     if (!pagesEl || typeof APPS === "undefined") return;
 
     const PER_PAGE = 8;
-    const pageCount = Math.ceil(APPS.length / PER_PAGE);
-    let current = 0;
+    const appPageCount = Math.ceil(APPS.length / PER_PAGE);
+    const pageCount = appPageCount + 1; // + a "Glance" page at index 0
+    let current = 1; // default to the first app page (Glance is one swipe left)
     let lastFocused = null;
 
     // Tiny inline icons for platform badges in the detail screen.
@@ -176,8 +177,29 @@
         ? `<img class="app-logo" src="${app.icon}" alt="" aria-hidden="true" loading="lazy" />`
         : `<svg viewBox="0 0 24 24" aria-hidden="true">${app.glyph}</svg>`;
 
-    // Build pages of icons
-    for (let p = 0; p < pageCount; p++) {
+    // Page 0 — "Glance": notification chips + Now-learning + GitHub widgets.
+    // TODO: edit the notification chips / numbers here to taste.
+    const glance = document.createElement("div");
+    glance.className = "app-page glance";
+    glance.innerHTML =
+      `<div class="notif">` +
+        `<div class="notif__chip"><span class="notif__ico">🔔</span><div><b>FairMoney</b><i>Reached 2M+ users</i></div></div>` +
+        `<div class="notif__chip"><span class="notif__ico">⭐</span><div><b>CourtAI</b><i>Now on macOS &amp; Windows</i></div></div>` +
+      `</div>` +
+      `<div class="gwidget gwidget--learn">` +
+        `<div class="gwidget__head"><svg viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5ZM6 11v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg> Now learning</div>` +
+        `<b>Data Science &amp; AI</b>` +
+        `<div class="gwidget__chips"><span>Python</span><span>ML</span><span>Statistics</span></div>` +
+      `</div>` +
+      `<div class="gwidget">` +
+        `<div class="gwidget__head"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 3.3 5.5 3.6 5.5 3.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 10c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg> Public GitHub</div>` +
+        `<div class="gwidget__stats"><span><b>48</b>repos</span><span><b>340</b>commits</span><span><b>36</b>PRs</span></div>` +
+        `<div class="gwidget__grid">${Array.from({ length: 28 }, (_, n) => `<i class="${[3, 5, 6, 9, 12, 13, 17, 18, 19, 22, 25, 26].includes(n) ? "on" : ""}"></i>`).join("")}</div>` +
+      `</div>`;
+    pagesEl.appendChild(glance);
+
+    // Build app pages
+    for (let p = 0; p < appPageCount; p++) {
       const page = document.createElement("div");
       page.className = "app-page";
       APPS.slice(p * PER_PAGE, p * PER_PAGE + PER_PAGE).forEach((app) => {
@@ -202,7 +224,7 @@
         const dot = document.createElement("button");
         dot.type = "button";
         dot.setAttribute("role", "tab");
-        dot.setAttribute("aria-label", `Page ${p + 1}`);
+        dot.setAttribute("aria-label", p === 0 ? "Glance page" : `Apps page ${p}`);
         dot.addEventListener("click", () => goTo(p));
         dotsEl.appendChild(dot);
       }
@@ -213,7 +235,7 @@
       $$(".app-page", pagesEl).forEach((pg) => (pg.style.transform = `translateX(${-current * 100}%)`));
       $$("button", dotsEl).forEach((d, i) => d.classList.toggle("is-active", i === current));
     }
-    goTo(0);
+    goTo(current);
 
     // Swipe between pages (touch)
     let startX = null;

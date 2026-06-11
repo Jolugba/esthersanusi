@@ -285,6 +285,33 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
   gap: 6px; align-content: space-evenly; transition: transform 0.4s var(--ease);
 }
 
+/* Glance page (first home page): notifications + widgets */
+.app-page.glance { display: flex; flex-direction: column; gap: 9px; align-content: initial; padding: 2px; overflow-y: auto; }
+.app-page.glance::-webkit-scrollbar { width: 0; }
+.notif { display: flex; flex-direction: column; gap: 7px; }
+.notif__chip {
+  display: flex; align-items: center; gap: 9px; padding: 8px 10px; border-radius: 14px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.notif__ico { font-size: 1rem; line-height: 1; }
+.notif__chip b { display: block; font-family: var(--font-display); font-size: 0.72rem; color: #fff; }
+.notif__chip i { font-style: normal; font-size: 0.62rem; color: rgba(255,255,255,0.7); }
+
+.gwidget { padding: 11px 12px; border-radius: 16px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.gwidget__head { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 8px; }
+.gwidget__head svg { width: 13px; height: 13px; stroke: var(--accent-2); }
+.gwidget--learn b { font-family: var(--font-display); font-size: 0.95rem; color: #fff; }
+.gwidget__chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.gwidget__chips span { font-size: 0.58rem; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-2); border: 1px solid rgba(255,255,255,0.1); }
+.gwidget__stats { display: flex; justify-content: space-between; gap: 6px; }
+.gwidget__stats span { display: flex; flex-direction: column; align-items: center; font-size: 0.55rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.06em; }
+.gwidget__stats b { font-family: var(--font-display); font-size: 1.1rem; color: #fff; }
+.gwidget__grid { display: grid; grid-template-columns: repeat(14, 1fr); gap: 3px; margin-top: 10px; }
+.gwidget__grid i { aspect-ratio: 1; border-radius: 2px; background: rgba(255,255,255,0.08); }
+.gwidget__grid i.on { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+
 /* Dock */
 .home__dock {
   position: relative; z-index: 1; display: flex; justify-content: space-around; align-items: center;
