@@ -156,6 +156,19 @@
       Web: pIcon('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
     };
 
+    // Store buttons — each key in an app's `links` object renders its own button
+    // pointing at the correct store. Order here = display order.
+    const sIcon = (p) => `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">${p}</svg>`;
+    const STORES = {
+      playStore:     { label: "Google Play",     icon: sIcon('<path d="M4 3l16 9-16 9zM4 3l11 9-11 9"/>') },
+      appStore:      { label: "App Store",        icon: sIcon('<path d="M16.5 13.5c0 3-2 5.5-3 5.5s-2-1-3-1-2 1-3 1-3-2.5-3-6 2-5 4-5c1 0 2 .8 2 .8s1-.8 2-.8c1.3 0 2.4.7 3 1.7M13 5.5c.4-1 1.4-2 2.5-2 0 1.2-.5 2.2-1 2.7"/>') },
+      macAppStore:   { label: "Mac App Store",    icon: sIcon('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M10 16v4M14 16v4M9.5 11l1.3-3.5L12 11M9.8 10h2M14 7.5v3.5"/>') },
+      microsoftStore:{ label: "Microsoft Store",  icon: sIcon('<path d="M3 5l8-1v7H3zM13 3.8 21 3v9h-8zM3 12h8v7l-8-1zM13 12h8v9l-8-1z"/>') },
+      web:           { label: "Visit website",    icon: sIcon('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>') },
+      github:        { label: "View on GitHub",   icon: sIcon('<path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6 0C6.6 3.3 5.5 3.6 5.5 3.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 10c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>') },
+      open:          { label: "Open project",     icon: sIcon('<path d="M7 17 17 7M9 7h8v8"/>') },
+    };
+
     // Visual for an app icon: a real logo image if provided, else the SVG glyph.
     // The background tint is only used for the glyph; a logo image fills the tile.
     const iconInner = (app) =>
@@ -220,6 +233,18 @@
         ? `<p class="detail__section-label">Platforms</p>` +
           `<div class="detail__platforms">${app.platforms.map((p) => `<span>${PLATFORM_ICON[p] || ""}${p}</span>`).join("")}</div>`
         : "";
+
+      // Build a store button per available link (with single-link fallback).
+      const linkEntries = app.links
+        ? Object.entries(app.links).filter(([k, v]) => v && STORES[k])
+        : (app.link ? [["open", app.link]] : []);
+      const linksHtml = linkEntries.length
+        ? `<div class="detail__links">` +
+          linkEntries
+            .map(([k, v]) => `<a class="detail__open" href="${v}" target="_blank" rel="noopener">${STORES[k].icon}<span>${STORES[k].label}</span></a>`)
+            .join("") +
+          `</div>`
+        : "";
       detail.innerHTML =
         `<div class="detail__bar">` +
         `<button type="button" class="detail__back" aria-label="Back to apps">` +
@@ -238,7 +263,7 @@
         `<div class="detail__chips">${app.stack.map((s) => `<span>${s}</span>`).join("")}</div>` +
         `<p class="detail__section-label">Highlights</p>` +
         `<ul class="detail__highlights">${app.highlights.map((h) => `<li>${h}</li>`).join("")}</ul>` +
-        `<a class="detail__open" href="${app.link}" target="_blank" rel="noopener">Open project ↗</a>`;
+        linksHtml;
 
       detail.querySelector(".detail__back").addEventListener("click", closeApp);
       home.classList.remove("is-active");

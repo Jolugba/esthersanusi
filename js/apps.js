@@ -13,13 +13,22 @@
      icon       OPTIONAL real logo image path, e.g. "assets/apps/fairmoney.png"
                 When set, the real logo is used instead of the glyph.  ← drop
                 your logos in assets/apps/ and add the path here.
-     platforms  OPTIONAL array of platforms — shown as badges in the detail
-                screen. Allowed values: "Android", "iOS", "Windows", "macOS", "Web"
+     platforms  OPTIONAL array — shown as badges. Values: "Android", "iOS",
+                "Windows", "macOS", "Web"
      personal   OPTIONAL true for personal projects (adds a ★ badge + tag)
      overview   one short paragraph for the detail screen
      stack      array of tech chips
      highlights array of bullet metrics
-     link       external "Open project" URL  (TODO: replace placeholders)
+     links      OPTIONAL object of store links — each present key renders its
+                OWN button pointing at the correct store:
+                  playStore       → Google Play   (Android)
+                  appStore        → App Store      (iOS)
+                  macAppStore     → Mac App Store  (macOS)
+                  microsoftStore  → Microsoft Store (Windows)
+                  web             → Visit website
+                  github          → View on GitHub
+                (If you omit `links` you can use a single `link:` string instead.)
+                TODO: replace all the placeholder store URLs below with real ones.
 ============================================================================= */
 
 const APPS = [
@@ -40,8 +49,11 @@ const APPS = [
       "FAIRTARGET savings revamp + FAIRDOLLAR launch",
       "Referral module refactored to shared KMP code",
     ],
-    // TODO: replace with the live Play Store / app link
-    link: "https://play.google.com/store",
+    links: {
+      // TODO: replace with the real store URLs
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com",
+    },
   },
   {
     id: "courtai",
@@ -60,8 +72,13 @@ const APPS = [
       "Conversational legal research for practising lawyers",
       "Part of the Lawpavilion product suite",
     ],
-    // TODO: replace with the live CourtAI link
-    link: "https://lawpavilion.com",
+    links: {
+      // TODO: replace with the real store URLs
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com",
+      macAppStore: "https://apps.apple.com/app/mac",
+      microsoftStore: "https://apps.microsoft.com",
+    },
   },
   {
     id: "elite",
@@ -82,8 +99,13 @@ const APPS = [
       "Search relevance +60%",
       "800+ active legal professionals",
     ],
-    // TODO: replace with the live Elite link
-    link: "https://lawpavilion.com",
+    links: {
+      // TODO: replace with the real store URLs
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com",
+      macAppStore: "https://apps.apple.com/app/mac",
+      microsoftStore: "https://apps.microsoft.com",
+    },
   },
   {
     id: "moj",
@@ -102,8 +124,13 @@ const APPS = [
       "Cross-platform: Android, iOS, Windows, macOS",
       "Secure document and case workflows",
     ],
-    // TODO: replace with the live MOJ link
-    link: "https://lawpavilion.com",
+    links: {
+      // TODO: replace with the real store URLs
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com",
+      macAppStore: "https://apps.apple.com/app/mac",
+      microsoftStore: "https://apps.microsoft.com",
+    },
   },
   {
     id: "cjrp",
@@ -122,8 +149,13 @@ const APPS = [
       "Cross-platform: Android, iOS, Windows, macOS",
       "Part of the legal-tech product suite",
     ],
-    // TODO: replace with the live CJRP link
-    link: "https://lawpavilion.com",
+    links: {
+      // TODO: replace with the real store URLs
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com",
+      macAppStore: "https://apps.apple.com/app/mac",
+      microsoftStore: "https://apps.microsoft.com",
+    },
   },
   {
     id: "stampseal",
@@ -142,8 +174,10 @@ const APPS = [
       "Native Android, built for verifiability",
       "Part of the legal-tech product suite",
     ],
-    // TODO: replace with the live Stamp & Seal link
-    link: "https://lawpavilion.com",
+    links: {
+      // TODO: replace with the real Play Store URL
+      playStore: "https://play.google.com/store",
+    },
   },
   {
     id: "justease",
@@ -163,8 +197,10 @@ const APPS = [
       "Offline-first (Room + WorkManager)",
       "API response time 3s → 800ms",
     ],
-    // TODO: replace with the live JustEase link
-    link: "https://play.google.com/store",
+    links: {
+      // TODO: replace with the real Play Store URL
+      playStore: "https://play.google.com/store",
+    },
   },
   {
     id: "healthfit",
@@ -182,8 +218,10 @@ const APPS = [
       "Digital health-facility inspections",
       "Field-ready, offline-tolerant data capture",
     ],
-    // TODO: replace with the live HealthFIT link
-    link: "https://lagosstate.gov.ng",
+    links: {
+      // TODO: replace with the real link (Play Store or project page)
+      web: "https://lagosstate.gov.ng",
+    },
   },
   {
     id: "tyia",
@@ -201,8 +239,10 @@ const APPS = [
       "ML model integration on Android",
       "Real-time messaging UI",
     ],
-    // TODO: replace with the live Tyia link
-    link: "https://github.com/Jolugba",
+    links: {
+      // TODO: replace with the real repo / store link
+      github: "https://github.com/Jolugba",
+    },
   },
 
   /* --------------------------- PERSONAL PROJECTS ---------------------------
@@ -225,8 +265,10 @@ const APPS = [
       "Offline-first local storage",
       // TODO: add real highlights / what you learned
     ],
-    // TODO: replace with the GitHub repo or demo link
-    link: "https://github.com/Jolugba",
+    links: {
+      // TODO: replace with the real repo / store links per platform
+      github: "https://github.com/Jolugba",
+    },
   },
   {
     id: "esthefi",
@@ -244,8 +286,10 @@ const APPS = [
       "Personal fintech product experiment",
       // TODO: add real highlights
     ],
-    // TODO: replace with the GitHub repo or demo link
-    link: "https://github.com/Jolugba",
+    links: {
+      // TODO: replace with the real repo / store links per platform
+      github: "https://github.com/Jolugba",
+    },
   },
   {
     id: "learning-track",
@@ -264,7 +308,9 @@ const APPS = [
       "Supports my move into data science & AI",
       // TODO: add real highlights
     ],
-    // TODO: replace with the GitHub repo or demo link
-    link: "https://github.com/Jolugba",
+    links: {
+      // TODO: replace with the real repo / store links per platform
+      github: "https://github.com/Jolugba",
+    },
   },
 ];
