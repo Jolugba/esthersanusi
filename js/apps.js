@@ -41,17 +41,17 @@ const APPS = [
     icon: null, // TODO: add "assets/apps/fairmoney.png"
     platforms: ["Android", "iOS"],
     overview:
-      "Savings and growth features for Nigeria's leading digital bank, serving 2M+ users. I drove Kotlin Multiplatform adoption on the savings stack, migrating three features to KMP in the first year.",
+      "Savings and growth features for Nigeria's leading digital bank — 10M+ downloads. I drove Kotlin Multiplatform adoption on the savings stack, migrating three features to KMP in the first year.",
     stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor"],
     highlights: [
-      "2M+ users reached",
+      "10M+ downloads · used by millions",
       "Migrated 3 features to KMP in year one (FAIRTARGET, FAIRDOLLAR, Referral)",
       "FAIRTARGET savings revamp + FAIRDOLLAR launch",
       "Referral module refactored to shared KMP code",
     ],
     links: {
-      // TODO: replace with the real store URLs
-      playStore: "https://play.google.com/store",
+      playStore: "https://play.google.com/store/apps/details?id=ng.com.fairmoney.fairmoney",
+      // TODO: replace with the real iOS App Store URL
       appStore: "https://apps.apple.com",
     },
   },
@@ -100,11 +100,9 @@ const APPS = [
       "800+ active legal professionals",
     ],
     links: {
-      // TODO: replace with the real store URLs
-      playStore: "https://play.google.com/store",
-      appStore: "https://apps.apple.com",
-      macAppStore: "https://apps.apple.com/app/mac",
-      microsoftStore: "https://apps.microsoft.com",
+      playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
+      web: "https://lawpavilion.com",
+      // TODO: add appStore / macAppStore / microsoftStore URLs when you have the real store listings
     },
   },
   {
@@ -186,7 +184,7 @@ const APPS = [
     accent: "#4fb477",
     glyph:
       '<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9Zm0-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
-    icon: null, // TODO: add "assets/apps/justease.png"
+    icon: "assets/apps/justease.png", // drop the JustEase logo here (PNG/SVG). Falls back to the glyph if missing.
     platforms: ["Android"],
     overview:
       "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns.",
@@ -198,8 +196,8 @@ const APPS = [
       "API response time 3s → 800ms",
     ],
     links: {
-      // TODO: replace with the real Play Store URL
-      playStore: "https://play.google.com/store",
+      // Play Store search (JustEase listing). TODO: swap for the direct app URL if you have it.
+      playStore: "https://play.google.com/store/search?q=justease&c=apps",
     },
   },
   {

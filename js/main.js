@@ -170,12 +170,12 @@
       open:          { label: "Open project",     icon: sIcon('<path d="M7 17 17 7M9 7h8v8"/>') },
     };
 
-    // Visual for an app icon: a real logo image if provided, else the SVG glyph.
-    // The background tint is only used for the glyph; a logo image fills the tile.
+    // Visual for an app icon: glyph as the base, with the real logo image (if
+    // provided) overlaid on top. If the logo file is missing/fails, it removes
+    // itself and the glyph shows through — never a broken image.
     const iconInner = (app) =>
-      app.icon
-        ? `<img class="app-logo" src="${app.icon}" alt="" aria-hidden="true" loading="lazy" />`
-        : `<svg viewBox="0 0 24 24" aria-hidden="true">${app.glyph}</svg>`;
+      `<svg viewBox="0 0 24 24" aria-hidden="true">${app.glyph}</svg>` +
+      (app.icon ? `<img class="app-logo" src="${app.icon}" alt="" aria-hidden="true" loading="lazy" onerror="this.remove()" />` : "");
 
     // Page 0 — "Glance": notification chips + Now-learning + GitHub widgets.
     // TODO: edit the notification chips / numbers here to taste.
@@ -183,7 +183,7 @@
     glance.className = "app-page glance";
     glance.innerHTML =
       `<div class="notif">` +
-        `<div class="notif__chip"><span class="notif__ico">🔔</span><div><b>FairMoney</b><i>Reached 2M+ users</i></div></div>` +
+        `<div class="notif__chip"><span class="notif__ico">🔔</span><div><b>FairMoney</b><i>10M+ downloads on Google Play</i></div></div>` +
         `<div class="notif__chip"><span class="notif__ico">⭐</span><div><b>CourtAI</b><i>Now on macOS &amp; Windows</i></div></div>` +
       `</div>` +
       `<div class="gwidget gwidget--learn">` +
@@ -205,9 +205,8 @@
       APPS.slice(p * PER_PAGE, p * PER_PAGE + PER_PAGE).forEach((app) => {
         const wrap = document.createElement("div");
         wrap.className = "app-icon";
-        const bg = app.icon ? "transparent" : app.accent;
         wrap.innerHTML =
-          `<button type="button" aria-label="Open ${app.name}" style="background:${bg}">` +
+          `<button type="button" aria-label="Open ${app.name}" style="background:${app.accent}">` +
           `${iconInner(app)}` +
           (app.personal ? `<span class="app-icon__badge" title="Personal project">★</span>` : "") +
           `</button>` +
@@ -250,7 +249,6 @@
     // Open / close detail
     function openApp(app) {
       lastFocused = document.activeElement;
-      const glyphBg = app.icon ? "transparent" : app.accent;
       const platforms = (app.platforms && app.platforms.length)
         ? `<p class="detail__section-label">Platforms</p>` +
           `<div class="detail__platforms">${app.platforms.map((p) => `<span>${PLATFORM_ICON[p] || ""}${p}</span>`).join("")}</div>`
@@ -274,8 +272,9 @@
         (app.personal ? `<span class="detail__tag">★ Personal project</span>` : "") +
         `</div>` +
         `<div class="detail__app">` +
-        `<div class="app-glyph" style="background:${glyphBg}">` +
-        (app.icon ? `<img class="app-logo" src="${app.icon}" alt="${app.name} logo" />` : `<svg viewBox="0 0 24 24">${app.glyph}</svg>`) +
+        `<div class="app-glyph" style="background:${app.accent}">` +
+        `<svg viewBox="0 0 24 24">${app.glyph}</svg>` +
+        (app.icon ? `<img class="app-logo" src="${app.icon}" alt="${app.name} logo" onerror="this.remove()" />` : "") +
         `</div>` +
         `<div><h3>${app.name}</h3><p>${app.category}</p></div></div>` +
         `<p class="detail__section-label">Overview</p>` +
