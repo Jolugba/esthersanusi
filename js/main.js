@@ -491,10 +491,12 @@
     ];
     let i = 0;
     const probe = new Image();
+    // The "ES" initials show immediately (base layer). Only once a photo is
+    // FULLY loaded do we fade it in on top — so a weak/slow network just keeps
+    // the initials instead of showing a blank box.
     probe.onload = () => {
       img.src = candidates[i];
-      img.hidden = false;
-      if (fallback) fallback.style.display = "none";
+      img.classList.add("is-ready");
     };
     probe.onerror = () => { if (++i < candidates.length) probe.src = candidates[i]; };
     probe.src = candidates[0];

@@ -1,6 +1,6 @@
 # Esther Sanusi — Portfolio
 
-A pixel-perfect, zero-config personal portfolio for a Senior Android Engineer.
+A pixel-perfect, zero-config personal portfolio for a Senior Software Engineer.
 Pure **HTML + CSS + vanilla JS**. No frameworks, no build step, no npm — it
 deploys straight to GitHub Pages.
 

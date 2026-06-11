@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ============================ SEO / META ============================ -->
-  <title>Esther Sanusi — Senior Android Engineer · KMP · Flutter</title>
-  <meta name="description" content="Esther Sanusi is a Senior Android Engineer in Lagos, Nigeria, building scalable mobile products used by millions across fintech, legal tech, and civic tech with Android, Kotlin Multiplatform, and Flutter." />
+  <title>Esther Sanusi — Senior Software Engineer · KMP · Flutter</title>
+  <meta name="description" content="Esther Sanusi is a Senior Software Engineer in Lagos, Nigeria, building scalable mobile products used by millions across fintech, legal tech, and civic tech with Android, Kotlin Multiplatform, and Flutter." />
   <meta name="author" content="Esther Sanusi" />
   <meta name="theme-color" content="#0b0b10" />
   <link rel="canonical" href="https://jolugba.github.io/esthersanusi/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Esther Sanusi — Senior Android Engineer · KMP · Flutter" />
+  <meta property="og:title" content="Esther Sanusi — Senior Software Engineer · KMP · Flutter" />
   <meta property="og:description" content="Mobile technology that works. Android, Kotlin Multiplatform & Flutter products used by millions." />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://jolugba.github.io/esthersanusi/" />
   <meta property="og:image" content="assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Esther Sanusi — Senior Android Engineer" />
+  <meta property="og:image:alt" content="Esther Sanusi — Senior Software Engineer" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Esther Sanusi — Senior Android Engineer · KMP · Flutter" />
+  <meta name="twitter:title" content="Esther Sanusi — Senior Software Engineer · KMP · Flutter" />
   <meta name="twitter:description" content="Mobile technology that works. Android, Kotlin Multiplatform & Flutter products used by millions." />
   <meta name="twitter:image" content="assets/og-image.png" />
 
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Esther Sanusi",
-    "jobTitle": "Senior Android Engineer",
+    "jobTitle": "Senior Software Engineer",
     "address": { "@type": "PostalAddress", "addressLocality": "Lagos", "addressCountry": "NG" },
     "email": "mailto:jolugbatinuade@gmail.com",
     "knowsAbout": ["Android", "Kotlin", "Kotlin Multiplatform", "Jetpack Compose", "Flutter", "Mobile Architecture"],
@@ -55,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- ?v= cache-buster. Bump this number whenever you change CSS/JS so browsers load the new version. -->
-  <link rel="stylesheet" href="css/styles.css?v=6" />
+  <link rel="stylesheet" href="css/styles.css?v=7" />
 </head>
 
 <body>
@@ -115,7 +115,7 @@
         <div class="hero__copy">
           <p class="eyebrow reveal">Hi, I'm</p>
           <h1 class="hero__name reveal">Esther Sanusi</h1>
-          <p class="hero__role reveal">Senior Android Engineer — Android · KMP · Flutter</p>
+          <p class="hero__role reveal">Senior Software Engineer — Android · KMP · Flutter</p>
           <p class="hero__tagline reveal">I build mobile technology that works.</p>
           <p class="hero__value reveal">
             Building scalable mobile products used by millions across fintech, legal tech, and civic tech —
@@ -154,8 +154,10 @@
                until then a styled "ES" mark shows so nothing looks broken. -->
           <figure class="portrait">
             <div class="portrait__ring" aria-hidden="true"></div>
-            <img class="portrait__img" id="portraitImg" alt="Esther Sanusi, Senior Android Engineer" hidden />
+            <!-- Initials show instantly; the photo fades in on top once fully loaded.
+                 On weak networks the photo never reveals and the initials stay. -->
             <span class="portrait__fallback" id="portraitFallback" aria-hidden="true">ES</span>
+            <img class="portrait__img" id="portraitImg" alt="Esther Sanusi, Senior Software Engineer" />
           </figure>
 
           <ul class="stats" aria-label="Career statistics">
@@ -219,13 +221,13 @@
                 <!-- Profile widget -->
                 <div class="home__widget">
                   <div class="home__avatar" id="homeAvatar">
-                    <img src="assets/esther.jpg" alt="Esther Sanusi"
-                         onerror="this.style.display='none';this.parentElement.classList.add('is-fallback')" />
                     <span aria-hidden="true">ES</span>
+                    <img src="assets/esther.jpg" alt="Esther Sanusi" loading="lazy"
+                         onload="this.classList.add('is-ready')" onerror="this.remove()" />
                   </div>
                   <div class="home__greeting">
                     <span class="home__hi">Hi, I'm Esther 👋</span>
-                    <span class="home__role">Senior Android Engineer</span>
+                    <span class="home__role">Senior Software Engineer</span>
                     <span class="home__avail"><i></i> Available for work</span>
                   </div>
                 </div>
@@ -548,7 +550,7 @@
             <span class="nav__logo-mark">ES</span>
             <span class="nav__logo-text">Esther Sanusi</span>
           </a>
-          <p>Senior Android Engineer building mobile technology that works — now extending into data science and AI. Lagos, Nigeria, working worldwide.</p>
+          <p>Senior Software Engineer building mobile technology that works — now extending into data science and AI. Lagos, Nigeria, working worldwide.</p>
         </div>
 
         <nav class="footer__col" aria-label="Footer">
@@ -600,11 +602,11 @@
   </div>
 
   <!-- ============================ SCRIPTS ============================ -->
-  <script src="js/apps.js?v=6"></script>
-  <script src="js/posts.js?v=6"></script>
-  <script src="js/certificates.js?v=6"></script>
-  <script src="js/focus.js?v=6"></script>
-  <script src="js/testimonials.js?v=6"></script>
-  <script src="js/main.js?v=6"></script>
+  <script src="js/apps.js?v=7"></script>
+  <script src="js/posts.js?v=7"></script>
+  <script src="js/certificates.js?v=7"></script>
+  <script src="js/focus.js?v=7"></script>
+  <script src="js/testimonials.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>
