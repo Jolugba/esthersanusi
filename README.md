@@ -1,4 +1,4 @@
-# Esther Jolugba — Portfolio
+# Esther Sanusi — Portfolio
 
 A pixel-perfect, zero-config personal portfolio for a Senior Android Engineer.
 Pure **HTML + CSS + vanilla JS**. No frameworks, no build step, no npm — it
@@ -88,7 +88,7 @@ frozen portfolio.
 ### Add your headshot
 Save your photo as **`assets/esther.jpg`** (the first studio headshot works
 best — it's framed for a 4:5 portrait). That's it — the hero picks it up
-automatically. If the file is missing the site falls back to the "EJ" mark, so
+automatically. If the file is missing the site falls back to the "ES" mark, so
 nothing ever breaks. To use a different filename, update the `src` on the
 `.portrait__img` element in [`index.html`](index.html).
 
