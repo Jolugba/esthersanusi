@@ -146,6 +146,23 @@
     let current = 0;
     let lastFocused = null;
 
+    // Tiny inline icons for platform badges in the detail screen.
+    const pIcon = (p) => `<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">${p}</svg>`;
+    const PLATFORM_ICON = {
+      Android: pIcon('<path d="M7 9a5 5 0 0 1 10 0v7H7zM6 11v5M18 11v5M9 4 8 2M15 4l1-2M10 13h.01M14 13h.01"/>'),
+      iOS: pIcon('<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/>'),
+      Windows: pIcon('<path d="M3 5l8-1v7H3zM13 3.8 21 3v9h-8zM3 12h8v7l-8-1zM13 12h8v9l-8-1z"/>'),
+      macOS: pIcon('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M10 16v4M14 16v4"/>'),
+      Web: pIcon('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'),
+    };
+
+    // Visual for an app icon: a real logo image if provided, else the SVG glyph.
+    // The background tint is only used for the glyph; a logo image fills the tile.
+    const iconInner = (app) =>
+      app.icon
+        ? `<img class="app-logo" src="${app.icon}" alt="" aria-hidden="true" loading="lazy" />`
+        : `<svg viewBox="0 0 24 24" aria-hidden="true">${app.glyph}</svg>`;
+
     // Build pages of icons
     for (let p = 0; p < pageCount; p++) {
       const page = document.createElement("div");
@@ -153,9 +170,12 @@
       APPS.slice(p * PER_PAGE, p * PER_PAGE + PER_PAGE).forEach((app) => {
         const wrap = document.createElement("div");
         wrap.className = "app-icon";
+        const bg = app.icon ? "transparent" : app.accent;
         wrap.innerHTML =
-          `<button type="button" aria-label="Open ${app.name}" style="background:${app.accent}">` +
-          `<svg viewBox="0 0 24 24" aria-hidden="true">${app.glyph}</svg></button>` +
+          `<button type="button" aria-label="Open ${app.name}" style="background:${bg}">` +
+          `${iconInner(app)}` +
+          (app.personal ? `<span class="app-icon__badge" title="Personal project">★</span>` : "") +
+          `</button>` +
           `<span>${app.name}</span>`;
         wrap.querySelector("button").addEventListener("click", () => openApp(app));
         page.appendChild(wrap);
@@ -195,16 +215,25 @@
     // Open / close detail
     function openApp(app) {
       lastFocused = document.activeElement;
+      const glyphBg = app.icon ? "transparent" : app.accent;
+      const platforms = (app.platforms && app.platforms.length)
+        ? `<p class="detail__section-label">Platforms</p>` +
+          `<div class="detail__platforms">${app.platforms.map((p) => `<span>${PLATFORM_ICON[p] || ""}${p}</span>`).join("")}</div>`
+        : "";
       detail.innerHTML =
         `<div class="detail__bar">` +
         `<button type="button" class="detail__back" aria-label="Back to apps">` +
         `<svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 5l-7 7 7 7"/></svg></button>` +
+        (app.personal ? `<span class="detail__tag">★ Personal project</span>` : "") +
         `</div>` +
         `<div class="detail__app">` +
-        `<div class="app-glyph" style="background:${app.accent}"><svg viewBox="0 0 24 24">${app.glyph}</svg></div>` +
+        `<div class="app-glyph" style="background:${glyphBg}">` +
+        (app.icon ? `<img class="app-logo" src="${app.icon}" alt="${app.name} logo" />` : `<svg viewBox="0 0 24 24">${app.glyph}</svg>`) +
+        `</div>` +
         `<div><h3>${app.name}</h3><p>${app.category}</p></div></div>` +
         `<p class="detail__section-label">Overview</p>` +
         `<p class="detail__overview">${app.overview}</p>` +
+        platforms +
         `<p class="detail__section-label">Tech stack</p>` +
         `<div class="detail__chips">${app.stack.map((s) => `<span>${s}</span>`).join("")}</div>` +
         `<p class="detail__section-label">Highlights</p>` +

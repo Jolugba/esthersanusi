@@ -5,15 +5,21 @@
    automatically (8 icons per page) and builds detail screens from this data.
 
    Fields:
-     id        unique slug (used for keys / aria)
-     name      label under the icon (keep short — 1–2 words)
-     category  small tag shown on the detail header
-     glyph     inline SVG path drawn inside the icon (no external images)
-     accent    icon background tint (CSS color)
-     overview  one short paragraph for the detail screen
-     stack     array of tech chips
+     id         unique slug (used for keys / aria)
+     name       label under the icon (keep short — 1–2 words)
+     category   small tag shown on the detail header
+     accent     icon background tint (used only for the SVG glyph fallback)
+     glyph      inline SVG path drawn inside the icon when there's no logo
+     icon       OPTIONAL real logo image path, e.g. "assets/apps/fairmoney.png"
+                When set, the real logo is used instead of the glyph.  ← drop
+                your logos in assets/apps/ and add the path here.
+     platforms  OPTIONAL array of platforms — shown as badges in the detail
+                screen. Allowed values: "Android", "iOS", "Windows", "macOS", "Web"
+     personal   OPTIONAL true for personal projects (adds a ★ badge + tag)
+     overview   one short paragraph for the detail screen
+     stack      array of tech chips
      highlights array of bullet metrics
-     link      external "Open project" URL  (TODO: replace placeholders)
+     link       external "Open project" URL  (TODO: replace placeholders)
 ============================================================================= */
 
 const APPS = [
@@ -23,6 +29,8 @@ const APPS = [
     category: "Fintech · KMP",
     accent: "#5b8def",
     glyph: '<path d="M6 18V8.2C6 6.4 7.3 5 9 5h6c1.7 0 3 1.4 3 3.2V18M6 11h12M10.5 14.5h3"/>',
+    icon: null, // TODO: add "assets/apps/fairmoney.png"
+    platforms: ["Android", "iOS"],
     overview:
       "Savings and growth features for Nigeria's leading digital bank, serving 2M+ users. I drove Kotlin Multiplatform adoption on the savings stack, migrating three features to KMP in the first year.",
     stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor"],
@@ -42,12 +50,14 @@ const APPS = [
     accent: "#7c6bff",
     glyph:
       '<path d="M12 4v3M7 7l-2 2M17 7l2 2M5 12H4m16 0h-1M12 8a4 4 0 0 0-4 4c0 2 1.5 3 1.5 4h5c0-1 1.5-2 1.5-4a4 4 0 0 0-4-4Z"/>',
+    icon: null, // TODO: add "assets/apps/courtai.png"
+    platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "AI-powered legal research built for Nigerian lawyers — natural-language case search and summarisation delivered through a Flutter client.",
+      "AI-powered legal research for Nigerian lawyers — one Flutter codebase shipping to mobile AND desktop (Windows + macOS), so lawyers research from phone or workstation.",
     stack: ["Flutter", "Dart", "REST", "AI/LLM", "Clean Architecture"],
     highlights: [
+      "Cross-platform: Android, iOS, Windows, macOS from one codebase",
       "Conversational legal research for practising lawyers",
-      "Cross-platform Flutter delivery",
       "Part of the Lawpavilion product suite",
     ],
     // TODO: replace with the live CourtAI link
@@ -56,13 +66,15 @@ const APPS = [
   {
     id: "elite",
     name: "LP Elite",
-    category: "Legal Tech · Android",
+    category: "Legal Tech · Cross-platform",
     accent: "#d4a24e",
     glyph:
       '<path d="M12 3l2.2 4.6L19 8.3l-3.5 3.4.8 4.9L12 14.3 7.7 16.6l.8-4.9L5 8.3l4.8-.7L12 3Z"/>',
+    icon: null, // TODO: add "assets/apps/elite.png"
+    platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Premium legal-research product for senior practitioners. I led a large Java→Kotlin migration that reset the app's reliability and search experience.",
-    stack: ["Kotlin", "MVVM", "Hilt", "Room", "Coroutines"],
+      "Premium legal-research product for senior practitioners, available on mobile and desktop (Windows + macOS via Flutter). I led the large Java→Kotlin migration that reset its reliability on Android.",
+    stack: ["Kotlin", "Flutter", "MVVM", "Hilt", "Room"],
     highlights: [
       "15K+ line Java→Kotlin migration",
       "NPEs reduced by 80%",
@@ -76,17 +88,19 @@ const APPS = [
   {
     id: "moj",
     name: "LP MOJ",
-    category: "Legal Tech · Android",
+    category: "Legal Tech · Cross-platform",
     accent: "#3fb6a8",
     glyph:
       '<path d="M5 21h14M6 21V9l6-4 6 4v12M9 21v-5h6v5M9.5 12h.01M14.5 12h.01"/>',
+    icon: null, // TODO: add "assets/apps/moj.png"
+    platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "A Ministry of Justice product built with Lawpavilion — digitising workflows for government legal teams.",
-    stack: ["Kotlin", "MVVM", "Room", "Retrofit", "DataStore"],
+      "A Ministry of Justice product built with Lawpavilion — digitising workflows for government legal teams across mobile and desktop (Windows + macOS) with a single Flutter codebase.",
+    stack: ["Flutter", "Dart", "MVVM", "REST", "Clean Architecture"],
     highlights: [
       "Government Ministry of Justice deployment",
+      "Cross-platform: Android, iOS, Windows, macOS",
       "Secure document and case workflows",
-      "Part of a 5-product legal suite I led",
     ],
     // TODO: replace with the live MOJ link
     link: "https://lawpavilion.com",
@@ -94,16 +108,18 @@ const APPS = [
   {
     id: "cjrp",
     name: "CJRP",
-    category: "Legal Tech · Android",
+    category: "Legal Tech · Cross-platform",
     accent: "#e06c9f",
     glyph:
       '<path d="M7 4h7l4 4v12H7zM14 4v4h4M9 13h6M9 16h4"/>',
+    icon: null, // TODO: add "assets/apps/cjrp.png"
+    platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Court Justice Reporting Platform — structured reporting and case tracking for the justice system.",
-    stack: ["Kotlin", "Clean Architecture", "Room", "WorkManager"],
+      "Court Justice Reporting Platform — structured reporting and case tracking for the justice system, delivered to mobile and desktop (Windows + macOS) from one Flutter codebase.",
+    stack: ["Flutter", "Dart", "Clean Architecture", "REST"],
     highlights: [
       "Court reporting and case-tracking workflows",
-      "Offline-capable data sync",
+      "Cross-platform: Android, iOS, Windows, macOS",
       "Part of the legal-tech product suite",
     ],
     // TODO: replace with the live CJRP link
@@ -116,6 +132,8 @@ const APPS = [
     accent: "#9b87f5",
     glyph:
       '<path d="M12 3a3 3 0 0 0-3 3c0 1.2.7 2 1.2 2.8.4.6.3 1.2-.2 1.7L8 12h8l-2-1.5c-.5-.5-.6-1.1-.2-1.7C14.3 8 15 7.2 15 6a3 3 0 0 0-3-3ZM6 16h12v3H6z"/>',
+    icon: null, // TODO: add "assets/apps/stampseal.png"
+    platforms: ["Android"],
     overview:
       "Document authentication for law firms and courts — native Android app for stamping, sealing, and verifying legal documents.",
     stack: ["Kotlin", "Jetpack Compose", "Hilt", "Room"],
@@ -134,6 +152,8 @@ const APPS = [
     accent: "#4fb477",
     glyph:
       '<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9Zm0-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
+    icon: null, // TODO: add "assets/apps/justease.png"
+    platforms: ["Android"],
     overview:
       "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns.",
     stack: ["Kotlin", "Room", "WorkManager", "Maps SDK", "MVVM"],
@@ -151,8 +171,9 @@ const APPS = [
     name: "HealthFIT",
     category: "GovTech · Android",
     accent: "#e0584e",
-    glyph:
-      '<path d="M5 12h3l2-5 4 10 2-5h3"/>',
+    glyph: '<path d="M5 12h3l2-5 4 10 2-5h3"/>',
+    icon: null, // TODO: add "assets/apps/healthfit.png"
+    platforms: ["Android"],
     overview:
       "Health facility inspections for the Lagos State Government — a contract product digitising field inspection workflows.",
     stack: ["Kotlin", "MVVM", "Room", "Retrofit", "DataStore"],
@@ -169,8 +190,9 @@ const APPS = [
     name: "Tyia Chatbot",
     category: "AI/ML · Android",
     accent: "#52b6d6",
-    glyph:
-      '<path d="M5 6h14v9H9l-4 3V6Zm4 4h.01M12 10h.01M15 10h.01"/>',
+    glyph: '<path d="M5 6h14v9H9l-4 3V6Zm4 4h.01M12 10h.01M15 10h.01"/>',
+    icon: null, // TODO: add "assets/apps/tyia.png"
+    platforms: ["Android"],
     overview:
       "A conversational chatbot for Android with on-device and cloud ML integration — natural language interaction wired into a production app.",
     stack: ["Kotlin", "ML integration", "Coroutines", "MVVM"],
@@ -180,6 +202,69 @@ const APPS = [
       "Real-time messaging UI",
     ],
     // TODO: replace with the live Tyia link
+    link: "https://github.com/Jolugba",
+  },
+
+  /* --------------------------- PERSONAL PROJECTS ---------------------------
+     Not in my CV — things I build for myself. TODO: refine the descriptions,
+     tech, and links below with the real details, and drop logos in assets/apps/. */
+  {
+    id: "deposit-tracker",
+    name: "Deposit Tracker",
+    category: "Personal · Finance",
+    accent: "#4fb477",
+    glyph: '<path d="M12 3v9m0 0 3-3m-3 3-3-3M5 15v4h14v-4"/>',
+    icon: null, // TODO: add "assets/apps/deposit-tracker.png"
+    personal: true,
+    platforms: ["Android"], // TODO: adjust if cross-platform
+    overview:
+      "A personal app for tracking deposits and savings goals — built to scratch my own itch and experiment with clean offline-first data flows. TODO: replace with the real description.",
+    stack: ["Kotlin", "Jetpack Compose", "Room", "MVVM"], // TODO: confirm stack
+    highlights: [
+      "Track deposits and progress toward savings goals",
+      "Offline-first local storage",
+      // TODO: add real highlights / what you learned
+    ],
+    // TODO: replace with the GitHub repo or demo link
+    link: "https://github.com/Jolugba",
+  },
+  {
+    id: "esthefi",
+    name: "EstheFi",
+    category: "Personal · Fintech",
+    accent: "#a06bff",
+    glyph: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/>',
+    icon: null, // TODO: add "assets/apps/esthefi.png"
+    personal: true,
+    platforms: ["Android", "iOS"], // TODO: adjust
+    overview:
+      "A personal fintech experiment — exploring product ideas and modern mobile architecture on my own terms. TODO: replace with the real description of what EstheFi does.",
+    stack: ["Flutter", "Dart", "REST"], // TODO: confirm stack
+    highlights: [
+      "Personal fintech product experiment",
+      // TODO: add real highlights
+    ],
+    // TODO: replace with the GitHub repo or demo link
+    link: "https://github.com/Jolugba",
+  },
+  {
+    id: "learning-track",
+    name: "Learning Track",
+    category: "Personal · Productivity",
+    accent: "#52b6d6",
+    glyph: '<path d="M12 4 2 9l10 5 10-5-10-5ZM6 11v5c0 1 3 2 6 2s6-1 6-2v-5"/>',
+    icon: null, // TODO: add "assets/apps/learning-track.png"
+    personal: true,
+    platforms: ["Android"], // TODO: adjust
+    overview:
+      "An app to track my own learning — courses, milestones, and progress as I move into data science and AI. Built to stay accountable to the journey. TODO: replace with the real description.",
+    stack: ["Kotlin", "Jetpack Compose", "Room"], // TODO: confirm stack
+    highlights: [
+      "Tracks courses, milestones, and study streaks",
+      "Supports my move into data science & AI",
+      // TODO: add real highlights
+    ],
+    // TODO: replace with the GitHub repo or demo link
     link: "https://github.com/Jolugba",
   },
 ];
