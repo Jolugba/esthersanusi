@@ -53,8 +53,7 @@ const APPS = [
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=ng.com.fairmoney.fairmoney",
-      // TODO: replace with the real iOS App Store URL
-      appStore: "https://apps.apple.com",
+      appStore: "https://apps.apple.com/us/app/fairmoney-loan-app-in-nigeria/id6456485223",
     },
   },
   {
@@ -104,10 +103,11 @@ const APPS = [
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
-      playStoreAdmin: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
+      appStore: "https://apps.apple.com/us/app/law-pavilion-elite/id6752488556",
       macAppStore: "https://apps.apple.com/ng/app/law-pavilion-elite/id6752488556",
+      playStoreAdmin: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
       web: "https://lawpavilion.com",
-      // TODO: add iOS App Store + Microsoft Store URLs when available
+      // TODO: add Microsoft Store URL when available
     },
   },
   {
