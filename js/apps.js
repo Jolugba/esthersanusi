@@ -204,7 +204,7 @@ const APPS = [
     accent: "#4fb477",
     glyph:
       '<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9Zm0-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
-    icon: "assets/apps/justease.png", // drop the JustEase logo here (PNG/SVG). Falls back to the glyph if missing.
+    icon: "assets/apps/justease.png?v=2", // drop the JustEase logo here (PNG/SVG). Falls back to the glyph if missing.
     platforms: ["Android"],
     overview:
       "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns.",
