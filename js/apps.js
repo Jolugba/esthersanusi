@@ -96,14 +96,13 @@ const APPS = [
     icon: "assets/apps/elite.png", // square white squircle launcher
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Premium legal-research product for senior practitioners, available on mobile and desktop (Windows + macOS via Flutter). I led the large Java→Kotlin migration that reset its reliability on Android.",
-    stack: ["Kotlin", "Flutter", "MVVM", "Hilt", "Room"],
+      "Premium legal-research product for senior practitioners — on mobile and desktop (Windows + macOS via Flutter). I co-led its Java→Kotlin migration and built its research and AI features.",
+    stack: ["Kotlin", "Flutter", "Lucene", "GPT / LLM", "MVVM", "Hilt", "Room"],
     highlights: [
-      "15K+ line Java→Kotlin migration",
-      "NPEs reduced by 80%",
-      "Crash rate 4.2% → 0.8%",
-      "Search relevance +60%",
-      "800+ active legal professionals",
+      "Co-led the 15K+ line Java→Kotlin migration (−80% NPEs, crash 4.2% → 0.8%)",
+      "Built My Research, all GPT features, and LPInsight",
+      "Optimized Lucene local search across 2021→2025 case data — relevance +60%",
+      "800+ active legal professionals; cleared long-standing backlog bugs",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
@@ -144,10 +143,11 @@ const APPS = [
     icon: "assets/apps/prime.png", // navy square launcher (orange P)
     platforms: ["Android"], // TODO: confirm (add iOS/Windows/macOS if applicable)
     overview:
-      "Part of the Lawpavilion legal-tech suite. TODO: replace with a one-line description of what LP Prime does and who it's for.",
+      "A Lawpavilion legal product — one of the first I worked on when I joined the company. TODO: add a one-line description of what LP Prime does for its users.",
     stack: ["Kotlin", "Android"], // TODO: confirm the real stack
     highlights: [
-      "Part of the Lawpavilion legal-tech product suite",
+      "One of my earliest products at Lawpavilion",
+      "Part of the Lawpavilion legal-tech suite",
       // TODO: add real highlights / metrics
     ],
     links: {
@@ -215,12 +215,12 @@ const APPS = [
     round: true,
     platforms: ["Android"],
     overview:
-      "Document authentication for law firms and courts — native Android app for stamping, sealing, and verifying legal documents.",
-    stack: ["Kotlin", "Jetpack Compose", "Hilt", "Room"],
+      "Authenticates Nigerian Bar Association (NBA) seals — scan a seal's barcode to verify a stamped document is genuine. Built for law firms and courts.",
+    stack: ["Kotlin", "Barcode scanning", "Jetpack Compose", "Hilt", "Room"],
     highlights: [
-      "Document authentication for firms & courts",
-      "Native Android, built for verifiability",
-      "Part of the legal-tech product suite",
+      "Barcode scanning to verify NBA seal authenticity",
+      "Native Android, built for trust and verifiability",
+      "Part of the Lawpavilion legal-tech suite",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.nbastampandseal",
@@ -237,13 +237,13 @@ const APPS = [
     round: true, // circular launcher — display as a round icon, not a square tile
     platforms: ["Android"],
     overview:
-      "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns.",
+      "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns. I led its v2 and v3 evolution.",
     stack: ["Kotlin", "Room", "WorkManager", "Maps SDK", "MVVM"],
     highlights: [
-      "1,000+ citizens served",
-      "99.2% crash-free sessions",
-      "Offline-first (Room + WorkManager)",
-      "API response time 3s → 800ms",
+      "1,000+ citizens served · 99.2% crash-free",
+      "Led the v2 & v3 design revamp and all new features",
+      "Mentored an intern who grew into a junior developer",
+      "Offline-first (Room + WorkManager); API 3s → 800ms",
     ],
     links: {
       // Play Store search (JustEase listing). TODO: swap for the direct app URL if you have it.
