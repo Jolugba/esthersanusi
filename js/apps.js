@@ -48,10 +48,11 @@ const APPS = [
     stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor", "CleverTap", "Customer.io"],
     highlights: [
       "10M+ downloads · used by millions",
-      "Migrated 3 existing modules to KMP, and contributed to FairDollar — a new USD savings product (2025)",
-      "Building Fairlock pre-liquidation and migrating SaversClub to KMP (2026)",
-      "Optimized analytics: CleverTap events + bots and Customer.io events",
-      "Hardened the test suite — fixed flaky tests, added missing unit & UI tests",
+      "Owned the home screen for FairDollar — a new USD savings product (2025)",
+      "Built FairDollar Help and remote-config-driven FAQs across all savings products",
+      "Migrated 3 existing modules to KMP (2025); migrating SaversClub to KMP (2026)",
+      "Building Fairlock pre-liquidation (2026)",
+      "Optimized CleverTap (events + bots) & Customer.io analytics; hardened tests (flaky fixes, unit & UI)",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=ng.com.fairmoney.fairmoney",
