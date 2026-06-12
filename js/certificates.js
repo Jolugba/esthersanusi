@@ -20,5 +20,13 @@ const CERTIFICATES = [
     url: "https://hng.tech/",
     thumb: null, // TODO (optional): "assets/certs/hng-internship.png"
   },
-  // TODO: add more certificates as you earn them — She Code Africa, Google, KMP, etc.
+  {
+    name: "SCA Mentoring Program — Android Track (Cohort 1)",
+    issuer: "She Code Africa",
+    year: "2020",
+    // TODO: save the certificate to assets/certs/she-code-africa.pdf and point here.
+    url: "https://shecodeafrica.org/",
+    thumb: null, // TODO (optional): "assets/certs/she-code-africa.png"
+  },
+  // TODO: add more certificates as you earn them — Google, KMP, conferences, etc.
 ];
