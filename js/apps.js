@@ -96,13 +96,13 @@ const APPS = [
     icon: "assets/apps/elite.png", // square white squircle launcher
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Premium legal-research product for senior practitioners — on mobile and desktop (Windows + macOS via Flutter). I co-led its Java→Kotlin migration and built its research and AI features.",
-    stack: ["Kotlin", "Flutter", "Lucene", "GPT / LLM", "MVVM", "Hilt", "Room"],
+      "Premium legal-research product for senior practitioners — one Flutter codebase shipping across mobile and desktop (Windows + macOS). Part of the suite I led as team lead.",
+    stack: ["Flutter", "Dart", "Clean Architecture", "REST", "Riverpod"],
     highlights: [
-      "Co-led the 15K+ line Java→Kotlin migration (−80% NPEs, crash 4.2% → 0.8%)",
-      "Built My Research, all GPT features, and LPInsight",
-      "Optimized Lucene local search across 2021→2025 case data — relevance +60%",
-      "800+ active legal professionals; cleared long-standing backlog bugs",
+      "Premium legal research across mobile + desktop (Windows & macOS)",
+      "One Flutter codebase, four platforms",
+      "800+ active legal professionals",
+      "Led as part of Lawpavilion's Flutter suite; content via remote config",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
@@ -136,19 +136,21 @@ const APPS = [
   },
   {
     id: "prime",
-    name: "LP Prime",
-    category: "Legal Tech · Android", // TODO: confirm category / platforms
+    name: "Lawpavilion Prime",
+    short: "LP Prime",
+    category: "Legal Tech · Native Android",
     accent: "#22244e",
     glyph: '<path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6l7-3Zm-2.5 8.5 1.8 1.8 3.2-3.5"/>',
     icon: "assets/apps/prime.png", // navy square launcher (orange P)
-    platforms: ["Android"], // TODO: confirm (add iOS/Windows/macOS if applicable)
+    platforms: ["Android"],
     overview:
-      "A legal-research tool from Lawpavilion — one of the first products I worked on when I joined the company.",
-    stack: ["Kotlin", "Android"],
+      "Lawpavilion's flagship legal-research tool (native Android) — one of the first products I worked on. I co-led its Java→Kotlin migration and built its research and AI features.",
+    stack: ["Kotlin", "Java→Kotlin", "Lucene", "GPT / LLM", "Coroutines", "MVVM", "Room"],
     highlights: [
-      "Legal-research tool for practitioners",
-      "One of my earliest products at Lawpavilion",
-      "Part of the Lawpavilion legal-tech suite",
+      "Co-led the full Java→Kotlin migration (15K+ lines, −80% NPEs); crash 4.2% → 0.8%",
+      "Built My Research, all GPT features, and LPInsight",
+      "Optimized Lucene local search across 2021→2025 case data — relevance +60%",
+      "Cleared long-standing backlog bugs",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lp.falcon",
