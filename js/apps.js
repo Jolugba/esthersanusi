@@ -38,9 +38,9 @@ const APPS = [
     id: "fairmoney",
     name: "FairMoney",
     category: "Fintech · KMP",
-    accent: "#5b8def",
+    accent: "#ffffff",
     glyph: '<path d="M6 18V8.2C6 6.4 7.3 5 9 5h6c1.7 0 3 1.4 3 3.2V18M6 11h12M10.5 14.5h3"/>',
-    icon: null, // TODO: add "assets/apps/fairmoney.png"
+    icon: "assets/apps/fairmoney.png", // square white launcher
     platforms: ["Android", "iOS"],
     overview:
       "Savings and growth features for Nigeria's leading digital bank — 10M+ downloads. I drove Kotlin Multiplatform adoption on the savings stack, migrating three features to KMP in the first year.",
@@ -61,10 +61,11 @@ const APPS = [
     id: "courtai",
     name: "CourtAI",
     category: "Legal Tech · AI · Flutter",
-    accent: "#7c6bff",
+    accent: "#e8730f",
     glyph:
       '<path d="M12 4v3M7 7l-2 2M17 7l2 2M5 12H4m16 0h-1M12 8a4 4 0 0 0-4 4c0 2 1.5 3 1.5 4h5c0-1 1.5-2 1.5-4a4 4 0 0 0-4-4Z"/>',
-    icon: null, // TODO: add "assets/apps/courtai.png"
+    icon: "assets/apps/courtai.png", // round orange launcher
+    round: true,
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
       "AI-powered legal research for Nigerian lawyers — one Flutter codebase shipping to mobile AND desktop (Windows + macOS), so lawyers research from phone or workstation.",
@@ -86,10 +87,10 @@ const APPS = [
     id: "elite",
     name: "LP Elite",
     category: "Legal Tech · Cross-platform",
-    accent: "#d4a24e",
+    accent: "#ffffff",
     glyph:
       '<path d="M12 3l2.2 4.6L19 8.3l-3.5 3.4.8 4.9L12 14.3 7.7 16.6l.8-4.9L5 8.3l4.8-.7L12 3Z"/>',
-    icon: null, // TODO: add "assets/apps/elite.png"
+    icon: "assets/apps/elite.png", // square white squircle launcher
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
       "Premium legal-research product for senior practitioners, available on mobile and desktop (Windows + macOS via Flutter). I led the large Java→Kotlin migration that reset its reliability on Android.",
@@ -104,17 +105,18 @@ const APPS = [
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
       playStoreAdmin: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
+      macAppStore: "https://apps.apple.com/ng/app/law-pavilion-elite/id6752488556",
       web: "https://lawpavilion.com",
-      // TODO: add appStore / macAppStore / microsoftStore URLs when you have the real store listings
+      // TODO: add iOS App Store + Microsoft Store URLs when available
     },
   },
   {
     id: "prime",
     name: "LP Prime",
     category: "Legal Tech · Android", // TODO: confirm category / platforms
-    accent: "#6f7bf0",
+    accent: "#22244e",
     glyph: '<path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6l7-3Zm-2.5 8.5 1.8 1.8 3.2-3.5"/>',
-    icon: null, // TODO: add "assets/apps/prime.png"
+    icon: "assets/apps/prime.png", // navy square launcher (orange P)
     platforms: ["Android"], // TODO: confirm (add iOS/Windows/macOS if applicable)
     overview:
       "Part of the Lawpavilion legal-tech suite. TODO: replace with a one-line description of what LP Prime does and who it's for.",
@@ -129,12 +131,12 @@ const APPS = [
   },
   {
     id: "moj",
-    name: "LP MOJ",
+    name: "CMS MOJ",
     category: "Legal Tech · Cross-platform",
     accent: "#3fb6a8",
     glyph:
       '<path d="M5 21h14M6 21V9l6-4 6 4v12M9 21v-5h6v5M9.5 12h.01M14.5 12h.01"/>',
-    icon: null, // TODO: add "assets/apps/moj.png"
+    icon: "assets/apps/moj.png", // full-bleed green square launcher (Casemanager MOJ)
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
       "A Ministry of Justice product built with Lawpavilion — digitising workflows for government legal teams across mobile and desktop (Windows + macOS) with a single Flutter codebase.",
@@ -145,21 +147,20 @@ const APPS = [
       "Secure document and case workflows",
     ],
     links: {
-      // TODO: replace with the real store URLs
-      playStore: "https://play.google.com/store",
-      appStore: "https://apps.apple.com",
-      macAppStore: "https://apps.apple.com/app/mac",
-      microsoftStore: "https://apps.microsoft.com",
+      playStore: "https://play.google.com/store/apps/details?id=com.casemanager.lawpavilion.lawpavilion_case_manager",
+      web: "https://lawpavilion.com",
+      // TODO: add iOS/Windows/macOS store URLs when you have the real listings
     },
   },
   {
     id: "cjrp",
     name: "CJRP",
     category: "Legal Tech · Cross-platform",
-    accent: "#e06c9f",
+    accent: "#1f5c3a",
     glyph:
       '<path d="M7 4h7l4 4v12H7zM14 4v4h4M9 13h6M9 16h4"/>',
-    icon: null, // TODO: add "assets/apps/cjrp.png"
+    icon: "assets/apps/cjrp.png", // round monitoring-committee seal
+    round: true,
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
       "Court Justice Reporting Platform — structured reporting and case tracking for the justice system, delivered to mobile and desktop (Windows + macOS) from one Flutter codebase.",
@@ -181,10 +182,11 @@ const APPS = [
     id: "stampseal",
     name: "Stamp & Seal",
     category: "Legal Tech · Native Android",
-    accent: "#9b87f5",
+    accent: "#2f6b3f",
     glyph:
       '<path d="M12 3a3 3 0 0 0-3 3c0 1.2.7 2 1.2 2.8.4.6.3 1.2-.2 1.7L8 12h8l-2-1.5c-.5-.5-.6-1.1-.2-1.7C14.3 8 15 7.2 15 6a3 3 0 0 0-3-3ZM6 16h12v3H6z"/>',
-    icon: null, // TODO: add "assets/apps/stampseal.png"
+    icon: "assets/apps/stampseal.png", // round NBA seal
+    round: true,
     platforms: ["Android"],
     overview:
       "Document authentication for law firms and courts — native Android app for stamping, sealing, and verifying legal documents.",
@@ -206,7 +208,7 @@ const APPS = [
     accent: "#4fb477",
     glyph:
       '<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9Zm0-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
-    icon: "assets/apps/justease.png?v=2", // drop the JustEase logo here (PNG/SVG). Falls back to the glyph if missing.
+    icon: "assets/apps/justease.png?v=3", // circular launcher, cropped tight to the green circle
     round: true, // circular launcher — display as a round icon, not a square tile
     platforms: ["Android"],
     overview:
