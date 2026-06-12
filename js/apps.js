@@ -123,12 +123,12 @@ const APPS = [
     icon: "assets/apps/elite.png", // shares the Elite launcher icon
     platforms: ["Android"], // TODO: confirm if also iOS/desktop
     overview:
-      "The admin companion to Law Pavilion Elite — the back-office app for managing content, users, and configuration behind the Elite legal-research platform.",
+      "The admin companion to Lawpavilion Elite — manages the organisation's users for the Elite legal-research platform.",
     stack: ["Kotlin", "MVVM", "Hilt", "Room"], // TODO: confirm the real stack
     highlights: [
-      "Admin console for the Elite platform",
-      "Content, user, and configuration management",
-      "Part of the Law Pavilion Elite product line",
+      "Manages organisation users for Lawpavilion Elite",
+      "Back-office admin console for the Elite platform",
+      "Part of the Lawpavilion Elite product line",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
@@ -143,12 +143,12 @@ const APPS = [
     icon: "assets/apps/prime.png", // navy square launcher (orange P)
     platforms: ["Android"], // TODO: confirm (add iOS/Windows/macOS if applicable)
     overview:
-      "A Lawpavilion legal product — one of the first I worked on when I joined the company. TODO: add a one-line description of what LP Prime does for its users.",
-    stack: ["Kotlin", "Android"], // TODO: confirm the real stack
+      "A legal-research tool from Lawpavilion — one of the first products I worked on when I joined the company.",
+    stack: ["Kotlin", "Android"],
     highlights: [
+      "Legal-research tool for practitioners",
       "One of my earliest products at Lawpavilion",
       "Part of the Lawpavilion legal-tech suite",
-      // TODO: add real highlights / metrics
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lp.falcon",
