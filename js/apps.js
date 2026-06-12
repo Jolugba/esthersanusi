@@ -105,9 +105,29 @@ const APPS = [
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
       appStore: "https://apps.apple.com/us/app/law-pavilion-elite/id6752488556",
       macAppStore: "https://apps.apple.com/ng/app/law-pavilion-elite/id6752488556",
-      playStoreAdmin: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
       web: "https://lawpavilion.com",
       // TODO: add Microsoft Store URL when available
+    },
+  },
+  {
+    id: "elite-admin",
+    name: "Elite Admin",
+    category: "Legal Tech · Admin",
+    accent: "#ffffff",
+    glyph:
+      '<path d="M12 3l2.2 4.6L19 8.3l-3.5 3.4.8 4.9L12 14.3 7.7 16.6l.8-4.9L5 8.3l4.8-.7L12 3Z"/>',
+    icon: "assets/apps/elite.png", // shares the Elite launcher icon
+    platforms: ["Android"], // TODO: confirm if also iOS/desktop
+    overview:
+      "The admin companion to Law Pavilion Elite — the back-office app for managing content, users, and configuration behind the Elite legal-research platform.",
+    stack: ["Kotlin", "MVVM", "Hilt", "Room"], // TODO: confirm the real stack
+    highlights: [
+      "Admin console for the Elite platform",
+      "Content, user, and configuration management",
+      "Part of the Law Pavilion Elite product line",
+    ],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
     },
   },
   {
@@ -198,8 +218,7 @@ const APPS = [
       "Part of the legal-tech product suite",
     ],
     links: {
-      // TODO: replace with the real Play Store URL
-      playStore: "https://play.google.com/store",
+      playStore: "https://play.google.com/store/apps/details?id=com.nbastampandseal",
     },
   },
   {
