@@ -378,6 +378,7 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
 .detail__highlights li { font-size: 0.76rem; color: #d0d0db; padding-left: 16px; position: relative; margin-bottom: 5px; }
 .detail__highlights li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .detail__links { margin-top: var(--s-6); display: flex; flex-direction: column; gap: 8px; }
+.detail__wip { margin-top: var(--s-6); padding: 0.7rem 0.9rem; border-radius: 12px; font-size: 0.76rem; color: var(--accent-2); background: var(--accent-soft); border: 1px dashed var(--border-strong); text-align: center; }
 .detail__open {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
   padding: 0.7rem; border-radius: 12px; font-weight: 600; font-size: 0.82rem;

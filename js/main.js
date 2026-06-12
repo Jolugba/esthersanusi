@@ -266,6 +266,8 @@
             .map(([k, v]) => `<a class="detail__open" href="${v}" target="_blank" rel="noopener">${STORES[k].icon}<span>${STORES[k].label}</span></a>`)
             .join("") +
           `</div>`
+        : app.wip
+        ? `<div class="detail__wip">🚧 In progress — building this internally, not public yet</div>`
         : "";
       detail.innerHTML =
         `<div class="detail__bar">` +

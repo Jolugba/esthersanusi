@@ -19,6 +19,8 @@
      personal   OPTIONAL true for personal projects (adds a ★ badge + tag)
      round      OPTIONAL true if the launcher icon is circular — renders the
                 tile as a round icon instead of a rounded square
+     wip        OPTIONAL true for work-in-progress / unreleased projects —
+                shows an "in progress" note instead of a project link
      overview   one short paragraph for the detail screen
      stack      array of tech chips
      highlights array of bullet metrics
@@ -315,10 +317,7 @@ const APPS = [
       "Offline-first local storage",
       // TODO: add real highlights / what you learned
     ],
-    links: {
-      // TODO: replace with the real repo / store links per platform
-      github: "https://github.com/Jolugba",
-    },
+    wip: true, // still building — not public yet, so no project link
   },
   {
     id: "esthefi",
@@ -336,10 +335,7 @@ const APPS = [
       "Personal fintech product experiment",
       // TODO: add real highlights
     ],
-    links: {
-      // TODO: replace with the real repo / store links per platform
-      github: "https://github.com/Jolugba",
-    },
+    wip: true, // still building — not public yet, so no project link
   },
   {
     id: "learning-track",
@@ -358,9 +354,6 @@ const APPS = [
       "Supports my move into data science & AI",
       // TODO: add real highlights
     ],
-    links: {
-      // TODO: replace with the real repo / store links per platform
-      github: "https://github.com/Jolugba",
-    },
+    wip: true, // still building — not public yet, so no project link
   },
 ];
