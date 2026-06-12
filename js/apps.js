@@ -174,8 +174,9 @@ const APPS = [
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.cjrp",
+      macAppStore: "https://apps.apple.com/ng/app/cjrp/id6759683485?mt=12",
       web: "https://lawpavilion.com",
-      // TODO: add iOS / macOS / Microsoft Store URLs when available
+      // TODO: add iOS App Store + Microsoft Store URLs when available
     },
   },
   {
