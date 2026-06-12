@@ -212,7 +212,7 @@
           `${iconInner(app)}` +
           (app.personal ? `<span class="app-icon__badge" title="Personal project">★</span>` : "") +
           `</button>` +
-          `<span>${app.name}</span>`;
+          `<span>${app.short || app.name}</span>`;
         wrap.querySelector("button").addEventListener("click", () => openApp(app));
         page.appendChild(wrap);
       });

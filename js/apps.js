@@ -6,7 +6,8 @@
 
    Fields:
      id         unique slug (used for keys / aria)
-     name       label under the icon (keep short — 1–2 words)
+     name       full app name (shown on the detail screen)
+     short      OPTIONAL short label shown under the phone icon (defaults to name)
      category   small tag shown on the detail header
      accent     icon background tint (used only for the SVG glyph fallback)
      glyph      inline SVG path drawn inside the icon when there's no logo
@@ -84,7 +85,8 @@ const APPS = [
   },
   {
     id: "elite",
-    name: "LP Elite",
+    name: "Lawpavilion Elite",
+    short: "Elite",
     category: "Legal Tech · Cross-platform",
     accent: "#ffffff",
     glyph:
@@ -111,7 +113,8 @@ const APPS = [
   },
   {
     id: "elite-admin",
-    name: "Elite Admin",
+    name: "Lawpavilion Elite Admin",
+    short: "Elite Admin",
     category: "Legal Tech · Admin",
     accent: "#ffffff",
     glyph:
