@@ -101,8 +101,28 @@ const APPS = [
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite",
+      playStoreAdmin: "https://play.google.com/store/apps/details?id=com.lawpavilion.elite.admin",
       web: "https://lawpavilion.com",
       // TODO: add appStore / macAppStore / microsoftStore URLs when you have the real store listings
+    },
+  },
+  {
+    id: "prime",
+    name: "LP Prime",
+    category: "Legal Tech · Android", // TODO: confirm category / platforms
+    accent: "#6f7bf0",
+    glyph: '<path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6l7-3Zm-2.5 8.5 1.8 1.8 3.2-3.5"/>',
+    icon: null, // TODO: add "assets/apps/prime.png"
+    platforms: ["Android"], // TODO: confirm (add iOS/Windows/macOS if applicable)
+    overview:
+      "Part of the Lawpavilion legal-tech suite. TODO: replace with a one-line description of what LP Prime does and who it's for.",
+    stack: ["Kotlin", "Android"], // TODO: confirm the real stack
+    highlights: [
+      "Part of the Lawpavilion legal-tech product suite",
+      // TODO: add real highlights / metrics
+    ],
+    links: {
+      playStore: "https://play.google.com/store/apps/details?id=com.lp.falcon",
     },
   },
   {

@@ -162,6 +162,7 @@
     const sIcon = (p) => `<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">${p}</svg>`;
     const STORES = {
       playStore:     { label: "Google Play",     icon: sIcon('<path d="M4 3l16 9-16 9zM4 3l11 9-11 9"/>') },
+      playStoreAdmin:{ label: "Admin app (Play)", icon: sIcon('<path d="M4 3l16 9-16 9zM4 3l11 9-11 9"/>') },
       appStore:      { label: "App Store",        icon: sIcon('<path d="M16.5 13.5c0 3-2 5.5-3 5.5s-2-1-3-1-2 1-3 1-3-2.5-3-6 2-5 4-5c1 0 2 .8 2 .8s1-.8 2-.8c1.3 0 2.4.7 3 1.7M13 5.5c.4-1 1.4-2 2.5-2 0 1.2-.5 2.2-1 2.7"/>') },
       macAppStore:   { label: "Mac App Store",    icon: sIcon('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M10 16v4M14 16v4M9.5 11l1.3-3.5L12 11M9.8 10h2M14 7.5v3.5"/>') },
       microsoftStore:{ label: "Microsoft Store",  icon: sIcon('<path d="M3 5l8-1v7H3zM13 3.8 21 3v9h-8zM3 12h8v7l-8-1zM13 12h8v9l-8-1z"/>') },
