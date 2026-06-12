@@ -589,7 +589,7 @@ html.has-cursor input, html.has-cursor textarea { cursor: text; }
 .cmdk__foot kbd { font-size: 0.68rem; margin-right: 2px; }
 
 /* ----------------------------- TESTIMONIALS -------------------------------- */
-.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-6); }
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--s-6); }
 .quote-card {
   display: flex; flex-direction: column; gap: var(--s-4);
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s-8);

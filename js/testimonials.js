@@ -1,40 +1,27 @@
 /* =============================================================================
-   testimonials.js — social proof. Matters for hiring AND brand collaborations.
+   testimonials.js — social proof. Real LinkedIn recommendations.
    -----------------------------------------------------------------------------
    TO ADD: append an object. Cards render automatically.
-   IMPORTANT: these are PLACEHOLDERS. Replace with real quotes you have
-   permission to publish (LinkedIn recommendations are a great source — ask the
-   author if you can quote them). Don't ship invented quotes.
+   Use real quotes you have permission to publish (LinkedIn recommendations).
 
    Fields: quote, name, role, company, avatar (optional image path, else initials)
 ============================================================================= */
 
 const TESTIMONIALS = [
   {
-    // TODO: replace with a real recommendation (e.g. from your Lawpavilion lead)
     quote:
-      "Esther took a fragile legacy Android codebase and turned it into something the whole team trusted. The crash rate drop was the headline; the calm, methodical way she got there was the real story.",
-    name: "Engineering Manager",
-    role: "Former lead",
-    company: "Lawpavilion",
+      "Esther comes highly recommended based on our collaboration while interning at HNG. She is a diligent software developer with the capacity to swiftly understand complex concepts. She truly deserved praise for her passion to learn and her proactive attitude to problem-solving. Her outstanding leadership abilities also came through as she motivated and led the team with efficiency. Without question, Esther would be an outstanding addition to any team or project.",
+    name: "Osemwingie Oshodin",
+    role: "Software Engineer",
+    company: "Amazon",
     avatar: null,
   },
   {
-    // TODO: replace with a real quote from a FairMoney colleague
     quote:
-      "She drove our Kotlin Multiplatform adoption from a side experiment to production features millions of people use. Rare to find someone who can both architect and ship.",
-    name: "Senior Engineer",
-    role: "Teammate",
-    company: "FairMoney",
-    avatar: null,
-  },
-  {
-    // TODO: replace with a real client / collaborator quote
-    quote:
-      "Clear communicator, ruthless about quality, and genuinely kind to mentor. Our junior engineers leveled up fast under her code reviews.",
-    name: "Product Lead",
-    role: "Collaborator",
-    company: "Legal-tech product",
+      "For analytics skills, I give it to Esther — one of a kind and good at what she does. An Android engineer with an eagle eye, always ready to interpret blueprints into code. I recommend her for any analytics position, and Android too.",
+    name: "Alvin Okoro",
+    role: "Senior Software Engineer · AI Engineer",
+    company: "",
     avatar: null,
   },
 ];

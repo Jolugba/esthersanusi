@@ -539,7 +539,7 @@
         `<figcaption class="quote-card__who">` +
         `<span class="quote-card__av">${t.avatar ? `<img src="${t.avatar}" alt="${t.name}" />` : initials(t.name)}</span>` +
         `<span><span class="quote-card__name">${t.name}</span><br>` +
-        `<span class="quote-card__role">${t.role} · ${t.company}</span></span>` +
+        `<span class="quote-card__role">${[t.role, t.company].filter(Boolean).join(" · ")}</span></span>` +
         `</figcaption></figure>`
     ).join("");
     const io = new IntersectionObserver(
