@@ -44,13 +44,14 @@ const APPS = [
     icon: "assets/apps/fairmoney.png", // square white launcher
     platforms: ["Android", "iOS"],
     overview:
-      "Savings and growth features for Nigeria's leading digital bank — 10M+ downloads. I drove Kotlin Multiplatform adoption on the savings stack, migrating three features to KMP in the first year.",
-    stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor"],
+      "Building new features and maintaining the savings stack for Nigeria's leading digital bank — 10M+ downloads. Driving Kotlin Multiplatform adoption while raising reliability, analytics quality, and test coverage.",
+    stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor", "CleverTap", "Customer.io"],
     highlights: [
       "10M+ downloads · used by millions",
-      "Migrated 3 features to KMP in year one (FAIRTARGET, FAIRDOLLAR, Referral)",
-      "FAIRTARGET savings revamp + FAIRDOLLAR launch",
-      "Referral module refactored to shared KMP code",
+      "Migrated 3 existing modules to KMP, and contributed to FairDollar — a new USD savings product (2025)",
+      "Building Fairlock pre-liquidation and migrating SaversClub to KMP (2026)",
+      "Optimized analytics: CleverTap events + bots and Customer.io events",
+      "Hardened the test suite — fixed flaky tests, added missing unit & UI tests",
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=ng.com.fairmoney.fairmoney",
