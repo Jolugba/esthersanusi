@@ -16,6 +16,8 @@
      platforms  OPTIONAL array — shown as badges. Values: "Android", "iOS",
                 "Windows", "macOS", "Web"
      personal   OPTIONAL true for personal projects (adds a ★ badge + tag)
+     round      OPTIONAL true if the launcher icon is circular — renders the
+                tile as a round icon instead of a rounded square
      overview   one short paragraph for the detail screen
      stack      array of tech chips
      highlights array of bullet metrics
@@ -205,6 +207,7 @@ const APPS = [
     glyph:
       '<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9Zm0-7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>',
     icon: "assets/apps/justease.png?v=2", // drop the JustEase logo here (PNG/SVG). Falls back to the glyph if missing.
+    round: true, // circular launcher — display as a round icon, not a square tile
     platforms: ["Android"],
     overview:
       "Crime-reporting app putting safety in citizens' hands. Offline-first so reports survive poor connectivity, then sync when the network returns.",

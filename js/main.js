@@ -206,8 +206,9 @@
       APPS.slice(p * PER_PAGE, p * PER_PAGE + PER_PAGE).forEach((app) => {
         const wrap = document.createElement("div");
         wrap.className = "app-icon";
+        const bg = app.round ? "transparent" : app.accent;
         wrap.innerHTML =
-          `<button type="button" aria-label="Open ${app.name}" style="background:${app.accent}">` +
+          `<button type="button" class="${app.round ? "is-round" : ""}" aria-label="Open ${app.name}" style="background:${bg}">` +
           `${iconInner(app)}` +
           (app.personal ? `<span class="app-icon__badge" title="Personal project">★</span>` : "") +
           `</button>` +
@@ -273,7 +274,7 @@
         (app.personal ? `<span class="detail__tag">★ Personal project</span>` : "") +
         `</div>` +
         `<div class="detail__app">` +
-        `<div class="app-glyph" style="background:${app.accent}">` +
+        `<div class="app-glyph${app.round ? " is-round" : ""}" style="background:${app.round ? "transparent" : app.accent}">` +
         `<svg viewBox="0 0 24 24">${app.glyph}</svg>` +
         (app.icon ? `<img class="app-logo" src="${app.icon}" alt="${app.name} logo" onerror="this.remove()" />` : "") +
         `</div>` +

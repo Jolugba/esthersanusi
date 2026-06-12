@@ -339,6 +339,9 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
 .app-icon button { position: relative; overflow: hidden; }
 .app-icon button svg { width: 28px; height: 28px; stroke: #fff; }
 .app-icon .app-logo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+/* round launchers: circular tile, no square background */
+.app-icon button.is-round { border-radius: 50%; box-shadow: 0 6px 16px -6px rgba(0,0,0,0.5); }
+.app-icon button.is-round .app-logo { border-radius: 50%; }
 .app-icon__badge {
   position: absolute; top: -3px; right: -3px; width: 16px; height: 16px; border-radius: 50%;
   background: var(--accent); color: #fff; font-size: 0.55rem; display: grid; place-items: center;
@@ -362,6 +365,7 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
 .detail__app .app-glyph { position: relative; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; flex: 0 0 auto; overflow: hidden; }
 .detail__app .app-glyph svg { width: 26px; height: 26px; stroke: #fff; }
 .detail__app .app-glyph .app-logo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.detail__app .app-glyph.is-round { border-radius: 50%; }
 .detail__platforms { display: flex; flex-wrap: wrap; gap: 6px; }
 .detail__platforms span { display: inline-flex; align-items: center; gap: 4px; font-size: 0.66rem; padding: 3px 9px; border-radius: 999px; background: rgba(255,255,255,0.05); color: #d0d0db; border: 1px solid var(--border); }
 .detail__platforms svg { stroke: var(--accent-2); }
