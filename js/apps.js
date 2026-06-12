@@ -148,8 +148,10 @@ const APPS = [
     ],
     links: {
       playStore: "https://play.google.com/store/apps/details?id=com.casemanager.lawpavilion.lawpavilion_case_manager",
+      appStore: "https://apps.apple.com/us/app/cms-moj/id6758410426",
+      macAppStore: "https://apps.apple.com/ng/app/cms-moj/id6758410426",
       web: "https://lawpavilion.com",
-      // TODO: add iOS/Windows/macOS store URLs when you have the real listings
+      // TODO: add Microsoft Store URL when available
     },
   },
   {
@@ -171,11 +173,9 @@ const APPS = [
       "Part of the legal-tech product suite",
     ],
     links: {
-      // TODO: replace with the real store URLs
-      playStore: "https://play.google.com/store",
-      appStore: "https://apps.apple.com",
-      macAppStore: "https://apps.apple.com/app/mac",
-      microsoftStore: "https://apps.microsoft.com",
+      playStore: "https://play.google.com/store/apps/details?id=com.lawpavilion.cjrp",
+      web: "https://lawpavilion.com",
+      // TODO: add iOS / macOS / Microsoft Store URLs when available
     },
   },
   {
