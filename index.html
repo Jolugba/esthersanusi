@@ -63,6 +63,24 @@
   }
   </script>
 
+  <!-- JSON-LD Organization schema: Gritty Widows Foundation (Esther is founder) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Gritty Widows Foundation",
+    "url": "https://grittywidowsfoundation.org",
+    "founder": {
+      "@type": "Person",
+      "name": "Esther Sanusi",
+      "alternateName": "Esther Jolugba",
+      "url": "https://esthersanusi.com/"
+    },
+    "areaServed": "Nigeria",
+    "description": "Equips and empowers low-income widowed families with business skills, healthcare access, education, and financial resources to break the cycle of poverty through sustainable enterprises."
+  }
+  </script>
+
   <!-- Inline SVG favicon: "ES" mark -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0b10'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%237c6bff' text-anchor='middle'%3EES%3C/text%3E%3C/svg%3E" />
 
@@ -98,6 +116,7 @@
       </a>
 
       <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#apps">Apps</a>
         <a href="#experience">Experience</a>
@@ -195,6 +214,34 @@
         <span>ANDROID · iOS · WINDOWS · macOS · KOTLIN MULTIPLATFORM · FLUTTER · JETPACK COMPOSE · CROSS-PLATFORM · FINTECH · LEGAL TECH · CIVIC TECH · DATA SCIENCE · AI / ML · </span>
       </div>
     </div>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">About Esther</h2>
+        </div>
+        <div class="card reveal" style="margin-top: var(--s-8); display: grid; gap: var(--s-4); max-width: 820px;">
+          <p class="section-lead" style="margin: 0;">
+            <strong>Esther Sanusi</strong> (formerly <strong>Esther Tinuade Jolugba</strong>) is a Senior
+            Software Engineer based in Lagos, Nigeria. Over 6+ years she has shipped 20+ live applications
+            reaching more than 10 million people across Android, iOS, Windows, and macOS — in fintech,
+            legal tech, and civic tech.
+          </p>
+          <p style="margin: 0; color: var(--text-dim);">
+            She builds with Kotlin, Kotlin Multiplatform, Jetpack Compose, and Flutter, and is now
+            extending her craft into data science and AI to build genuinely smarter products. She grew
+            from an Android engineer into a software engineer by shipping whatever the product needed.
+          </p>
+          <p style="margin: 0; color: var(--text-dim);">
+            Beyond engineering, Esther is the founder of the <strong>Gritty Widows Foundation</strong>,
+            which empowers low-income widowed families, and a relentless researcher and reader who is
+            always widening the craft.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- ============================ PHONE SHOWCASE ============================ -->
     <section class="section apps" id="apps">
