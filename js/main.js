@@ -440,8 +440,11 @@
       try {
         const res = await fetch(action, { method: "POST", body: data, headers: { Accept: "application/json" } });
         if (res.ok) {
+          const firstName = String(data.get("name") || "").trim().split(/\s+/)[0];
           form.reset();
-          status.textContent = "Thanks — I'll reply within a day.";
+          status.textContent = firstName
+            ? `Yay, thank you ${firstName}! 💜 Your message just landed — I'll get back to you within a day.`
+            : "Yay, thank you! 💜 Your message just landed — I'll get back to you within a day.";
           status.className = "contact__status is-ok";
         } else {
           throw new Error("bad response");
