@@ -90,7 +90,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- ?v= cache-buster. Bump this number whenever you change CSS/JS so browsers load the new version. -->
-  <link rel="stylesheet" href="css/styles.css?v=29" />
+  <link rel="stylesheet" href="css/styles.css?v=31" />
 </head>
 
 <body>
@@ -122,6 +122,7 @@
         <a href="#experience">Experience</a>
         <a href="#now">Now</a>
         <a href="#writing">Blog</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="#certificates">Certificates</a>
         <a href="https://github.com/Jolugba" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="#contact" class="nav__cta">Contact</a>
@@ -523,6 +524,62 @@
         </div>
         <div class="posts" id="posts"><!-- injected from posts.js --></div>
       </div>
+    </section>
+
+    <!-- ============================ NEWSLETTER ============================ -->
+    <section class="section newsletter" id="newsletter">
+      <div class="container">
+        <div class="newsletter__card card reveal">
+          <div class="newsletter__copy">
+            <p class="eyebrow">The personal newsletter</p>
+            <h2 class="section-title">The story behind the code.</h2>
+            <p class="section-lead">
+              Once a week, a personal letter from me — not the engineering, but the human behind it.
+              Life, faith, and honest lessons from building things (and building a life). The messy,
+              real middle of the journey, shared straight to your inbox.
+            </p>
+            <ul class="newsletter__perks">
+              <li>✨ Honest stories from life as an engineer, wife &amp; founder</li>
+              <li>🌱 Faith, growth &amp; the lessons that don't fit in a commit</li>
+              <li>💌 A warm, personal letter — once a week, never spam</li>
+            </ul>
+            <p class="newsletter__elsewhere">Here for the tech? The deep-dives live on
+              <a href="https://medium.com/@jolugbatinuade" target="_blank" rel="noopener">Medium</a> &amp;
+              <a href="https://hashnode.com/@Tinuade" target="_blank" rel="noopener">Hashnode</a>.</p>
+          </div>
+
+          <!-- Posts to esthersanusi.substack.com. The hidden iframe keeps the visitor on-page;
+               Substack then emails them a confirmation (double opt-in). -->
+          <form class="newsletter__form" id="newsletterForm"
+                action="https://esthersanusi.substack.com/api/v1/free" method="post" target="ns-sink">
+            <label class="newsletter__label" for="ns-email">Get the weekly email</label>
+            <div class="newsletter__row">
+              <input type="email" id="ns-email" name="email" required
+                     placeholder="you@example.com" autocomplete="email" />
+              <button type="submit" class="btn btn--primary">Subscribe</button>
+            </div>
+            <p class="newsletter__note" id="nsNote">Free · weekly · unsubscribe anytime.</p>
+            <p class="newsletter__alt">Prefer Substack? <a href="https://esthersanusi.substack.com/subscribe" target="_blank" rel="noopener">Subscribe there ↗</a></p>
+          </form>
+          <iframe name="ns-sink" title="newsletter" aria-hidden="true" style="display:none"></iframe>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var f = document.getElementById('newsletterForm');
+          if (!f) return;
+          f.addEventListener('submit', function () {
+            var note = document.getElementById('nsNote');
+            var row = f.querySelector('.newsletter__row');
+            // The hidden iframe handles the POST to Substack; show success optimistically.
+            setTimeout(function () {
+              if (row) row.style.display = 'none';
+              note.innerHTML = '🎉 Almost there — check your inbox to <b>confirm</b> your subscription.';
+              note.classList.add('is-success');
+            }, 120);
+          });
+        })();
+      </script>
     </section>
 
     <!-- ============================ GITHUB ============================ -->
