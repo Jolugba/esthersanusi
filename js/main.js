@@ -361,7 +361,9 @@
             readTime: "",
             excerpt: (it.description || "").replace(/<[^>]+>/g, "").slice(0, 160).trim() + "…",
           }));
-          render(live);
+          // Keep pinned non-Medium posts (e.g. personal Substack essays) ahead of the live Medium feed.
+          const pinned = POSTS.filter((p) => p.platform !== "Medium");
+          render([...pinned, ...live]);
         })
         .catch(() => { /* keep static POSTS */ });
     }

@@ -17,6 +17,15 @@ const MEDIUM_RSS = "https://medium.com/feed/@jolugbatinuade";
 // Static fallback (shown if the live feed can't load). Real articles.
 const POSTS = [
   {
+    title: "Your Brain Is More Powerful Than You Think",
+    platform: "Substack",
+    url: "https://esthersanusi.substack.com/p/your-brain-is-more-powerful-than",
+    date: "2026-07-02",
+    readTime: "6 min read",
+    excerpt:
+      "How I went from chemical compounds to code — and what the transition taught me about the mind.",
+  },
+  {
     title: "How She Code Africa Cohort Helped Me Overcome Imposter Syndrome",
     platform: "Medium",
     url: "https://medium.com/@jolugbatinuade/how-she-code-africa-cohort-helped-me-overcome-imposter-syndrome-fe8bb70c0519",
