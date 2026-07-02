@@ -696,4 +696,32 @@
       console.log("%cYou opened the console — that tells me something about you.\nI'm Esther: I build mobile tech that works, and I'm moving into data science & AI.\nIf you're hiring or want to collaborate: jolugbatinuade@gmail.com\nTip: press ⌘K (or Ctrl+K) anywhere on this page.", s2);
     } catch (_) {}
   })();
+
+  /* ----------------------- OUTBOUND CLICK TRACKING ------------------------ */
+  // Sends a GA4 event when a visitor clicks a link that leaves the site
+  // (Substack, GitHub, LinkedIn, Medium, mailto…) so we can see what converts.
+  (function outboundTracking() {
+    if (typeof window.gtag !== "function") return;
+    const here = location.hostname;
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest("a[href]");
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+      let host = "";
+      try { host = new URL(a.href, location.href).hostname; } catch (_) {}
+      const isMail = href.startsWith("mailto:");
+      const isOutbound = isMail || (host && host !== here);
+      if (!isOutbound) return;
+      window.gtag("event", "click", {
+        event_category: "outbound",
+        event_label: isMail ? "email" : (host + (a.pathname || "")),
+        transport_type: "beacon",
+      });
+    }, { capture: true });
+
+    // Also flag newsletter signups.
+    const nf = document.getElementById("newsletterForm");
+    if (nf) nf.addEventListener("submit", () =>
+      window.gtag("event", "sign_up", { method: "newsletter" }));
+  })();
 })();

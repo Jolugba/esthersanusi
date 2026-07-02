@@ -1,0 +1,16 @@
+{
+  "name": "Esther Sanusi — Senior Software Engineer",
+  "short_name": "Esther Sanusi",
+  "description": "Portfolio of Esther Sanusi (Esther Jolugba) — Senior Software Engineer building scalable mobile products with Android, Kotlin Multiplatform & Flutter.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0b10",
+  "theme_color": "#0b0b10",
+  "icons": [
+    { "src": "/assets/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/assets/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

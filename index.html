@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Warm up connections to third-party origins for faster loads -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://ghchart.rshah.org" />
+  <link rel="dns-prefetch" href="https://github-readme-stats.vercel.app" />
+  <link rel="dns-prefetch" href="https://api.rss2json.com" />
+
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K48B7HQTSB"></script>
   <script>
@@ -81,11 +90,37 @@
   }
   </script>
 
+  <!-- JSON-LD Blog schema: featured writing. Update the blogPost entry when a new essay is featured. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Writing by Esther Sanusi",
+    "url": "https://esthersanusi.com/#writing",
+    "author": {
+      "@type": "Person",
+      "name": "Esther Sanusi",
+      "url": "https://esthersanusi.com/"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Your Brain Is More Powerful Than You Think",
+        "description": "How I went from chemical compounds to code — and what the transition taught me about the mind.",
+        "url": "https://esthersanusi.substack.com/p/your-brain-is-more-powerful-than",
+        "datePublished": "2026-07-02",
+        "author": { "@type": "Person", "name": "Esther Sanusi", "url": "https://esthersanusi.com/" }
+      }
+    ]
+  }
+  </script>
+
   <!-- Favicon: "ES" mark. Real crawlable files so Google Search shows the logo (data: URIs are ignored by Search). -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -93,7 +128,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- ?v= cache-buster. Bump this number whenever you change CSS/JS so browsers load the new version. -->
-  <link rel="stylesheet" href="css/styles.css?v=31" />
+  <link rel="stylesheet" href="css/styles.css?v=32" />
 </head>
 
 <body>
@@ -525,7 +560,12 @@
             <a href="https://substack.com/@esthersanusi" target="_blank" rel="noopener" class="btn btn--ghost btn--sm magnetic">Personal essays on Substack ↗</a>
           </div>
         </div>
-        <div class="posts" id="posts"><!-- injected from posts.js --></div>
+        <div class="posts" id="posts">
+          <!-- Skeleton placeholders shown until posts.js renders (replaced on load). -->
+          <div class="post-card post-card--skeleton" aria-hidden="true"><span class="sk sk--badge"></span><span class="sk sk--title"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+          <div class="post-card post-card--skeleton" aria-hidden="true"><span class="sk sk--badge"></span><span class="sk sk--title"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+          <div class="post-card post-card--skeleton" aria-hidden="true"><span class="sk sk--badge"></span><span class="sk sk--title"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+        </div>
       </div>
     </section>
 

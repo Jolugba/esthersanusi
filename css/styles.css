@@ -703,3 +703,19 @@ html.has-cursor input, html.has-cursor textarea { cursor: text; }
 .newsletter__elsewhere { margin-top: var(--s-4); font-size: 0.85rem; color: var(--text-mute); }
 .newsletter__elsewhere a { color: var(--accent-2); text-decoration: none; }
 .newsletter__elsewhere a:hover { text-decoration: underline; }
+
+/* Loading skeletons for the Writing section (shown until posts.js renders) */
+.post-card--skeleton { pointer-events: none; gap: var(--s-3); }
+.post-card--skeleton:hover { transform: none; border-color: var(--border); }
+.sk { display: block; border-radius: 6px; background: var(--surface-2); position: relative; overflow: hidden; }
+.sk--badge { width: 64px; height: 20px; border-radius: 999px; margin-bottom: var(--s-4); }
+.sk--title { width: 85%; height: 20px; margin-bottom: var(--s-4); }
+.sk--line { width: 100%; height: 12px; margin-bottom: var(--s-3); }
+.sk--short { width: 55%; }
+.sk::after {
+  content: ""; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: sk-shimmer 1.3s infinite;
+}
+@keyframes sk-shimmer { 100% { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }
