@@ -496,6 +496,8 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
 .contact__links { margin-top: var(--s-8); display: grid; gap: var(--s-3); }
 .contact__links a { color: var(--text-dim); transition: color 0.2s; width: fit-content; }
 .contact__links a:hover { color: var(--accent); }
+.contact__call { margin-top: var(--s-8); display: grid; gap: var(--s-3); justify-items: start; }
+.contact__call-note { color: var(--text-dim); font-size: 0.9rem; max-width: 36ch; }
 .contact__form { padding: var(--s-8); display: grid; gap: var(--s-4); }
 .field { display: grid; gap: var(--s-2); }
 .field label { font-size: 0.85rem; color: var(--text-dim); }
