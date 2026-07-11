@@ -17,6 +17,15 @@ const MEDIUM_RSS = "https://medium.com/feed/@jolugbatinuade";
 // Static fallback (shown if the live feed can't load). Real articles.
 const POSTS = [
   {
+    title: "What Nobody Tells You Before You Migrate Your First Feature to KMP",
+    platform: "Medium",
+    url: "https://medium.com/@jolugbatinuade/what-nobody-tells-you-before-you-migrate-your-first-feature-to-kmp-59cbf2053de0",
+    date: "2026-07-10",
+    readTime: "5 min read",
+    excerpt:
+      "Candid lessons from a first Kotlin Multiplatform migration — the build times, infrastructure costs, and architectural alignment the tutorials leave out.",
+  },
+  {
     title: "Your Brain Is More Powerful Than You Think",
     platform: "Substack",
     url: "https://esthersanusi.substack.com/p/your-brain-is-more-powerful-than",
