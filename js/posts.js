@@ -17,6 +17,15 @@ const MEDIUM_RSS = "https://medium.com/feed/@jolugbatinuade";
 // Static fallback (shown if the live feed can't load). Real articles.
 const POSTS = [
   {
+    title: "What Nobody Teaches You About Teaching Yourself",
+    platform: "Substack",
+    url: "https://esthersanusi.substack.com/p/what-nobody-teaches-you-about-teaching",
+    date: "2026-07-15",
+    readTime: "",
+    excerpt:
+      "The internet made information free. It didn't make learning easy — what self-taught learners actually need to know.",
+  },
+  {
     title: "What Nobody Tells You Before You Migrate Your First Feature to KMP",
     platform: "Medium",
     url: "https://medium.com/@jolugbatinuade/what-nobody-tells-you-before-you-migrate-your-first-feature-to-kmp-59cbf2053de0",
