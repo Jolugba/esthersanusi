@@ -64,7 +64,7 @@
       <div class="score">lost, but learning · score <b id="score">0</b>/<span id="total">0</span></div>
     </div>
     <div class="card" id="card"></div>
-    <p class="sub">Page not found — so let's make it fun. Real answers go <a href="/">home</a>.</p>
+    <p class="sub">Page not found. So let's make it fun. Real answers go <a href="/">home</a>.</p>
   </main>
 
 <script>
@@ -72,19 +72,19 @@
 const Q=[
   {k:"Coding trivia",q:"What was the very first computer 'bug'?",
    a:["A typo in FORTRAN","An actual moth in a relay","A failed punch card","A power surge"],c:1,
-   r:"💡 A real <b>moth</b>, found in a Harvard Mark II relay in 1947 — taped right into the logbook."},
+   r:"💡 A real <b>moth</b>, found in a Harvard Mark II relay in 1947, taped right into the logbook."},
   {k:"Guess about Esther",q:"How many people have Esther's apps reached?",
    a:["~100K","~1 million","10M+","Hard to say"],c:2,
-   r:"🚀 <b>10M+ people</b> across 20+ live apps — in fintech, legal tech & civic tech."},
+   r:"🚀 <b>10M+ people</b> across 20+ live apps, in fintech, legal tech & civic tech."},
   {k:"Coding trivia",q:"Python the language is named after…",
    a:["The snake","Monty Python","A Greek myth","Its creator's cat"],c:1,
-   r:"🐍 <b>Monty Python</b> — Guido van Rossum was a fan. Not the snake at all."},
+   r:"🐍 <b>Monty Python</b>: Guido van Rossum was a fan, not the snake at all."},
   {k:"Guess about Esther",q:"Which platforms does Esther ship to?",
    a:["Android only","Android + iOS","Android, iOS, Windows & macOS","Web only"],c:2,
-   r:"📱 <b>All four</b> — Kotlin Multiplatform lets one codebase travel everywhere."},
-  {k:"Coding trivia",q:"Who wrote the first algorithm — in the 1840s?",
+   r:"📱 <b>All four</b>: Kotlin Multiplatform lets one codebase travel everywhere."},
+  {k:"Coding trivia",q:"Who wrote the first algorithm, in the 1840s?",
    a:["Alan Turing","Ada Lovelace","Grace Hopper","Charles Babbage"],c:1,
-   r:"✨ <b>Ada Lovelace</b> — a full century before computers existed."},
+   r:"✨ <b>Ada Lovelace</b>, a full century before computers existed."},
 ];
 let i=0, score=0;
 document.getElementById("total").textContent=Q.length;
@@ -93,7 +93,7 @@ const card=document.getElementById("card");
 function render(){
   if(i>=Q.length){
     const msg = score===Q.length?"Flawless. You should be building things too.":
-                score>=3?"Sharp. You clearly belong here.":"The 404 wins this round — but you learned a few things. 😄";
+                score>=3?"Sharp. You clearly belong here.":"The 404 wins this round, but you learned a few things. 😄";
     card.innerHTML=`<div class="end">
       <p class="kicker">game over</p>
       <p class="big">You scored ${score}/${Q.length}</p>

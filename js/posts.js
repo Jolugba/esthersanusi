@@ -23,7 +23,7 @@ const POSTS = [
     date: "2026-07-15",
     readTime: "",
     excerpt:
-      "The internet made information free. It didn't make learning easy — what self-taught learners actually need to know.",
+      "The internet made information free. It didn't make learning easy: what self-taught learners actually need to know.",
   },
   {
     title: "What Nobody Tells You Before You Migrate Your First Feature to KMP",
@@ -32,7 +32,7 @@ const POSTS = [
     date: "2026-07-10",
     readTime: "5 min read",
     excerpt:
-      "Candid lessons from a first Kotlin Multiplatform migration — the build times, infrastructure costs, and architectural alignment the tutorials leave out.",
+      "Candid lessons from a first Kotlin Multiplatform migration: the build times, infrastructure costs, and architectural alignment the tutorials leave out.",
   },
   {
     title: "Your Brain Is More Powerful Than You Think",
@@ -41,7 +41,7 @@ const POSTS = [
     date: "2026-07-02",
     readTime: "6 min read",
     excerpt:
-      "How I went from chemical compounds to code — and what the transition taught me about the mind.",
+      "How I went from chemical compounds to code, and what the transition taught me about the mind.",
   },
   {
     title: "How She Code Africa Cohort Helped Me Overcome Imposter Syndrome",
@@ -59,7 +59,7 @@ const POSTS = [
     date: "2020-04-01",
     readTime: "7 min read",
     excerpt:
-      "A practical, step-by-step guide to wiring up Firebase Authentication in an Android app — without the usual gotchas.",
+      "A practical, step-by-step guide to wiring up Firebase Authentication in an Android app, without the usual gotchas.",
   },
   {
     title: "Demystifying Cloud Computing — Episode 1",
@@ -68,6 +68,6 @@ const POSTS = [
     date: "2024-09-30",
     readTime: "6 min read",
     excerpt:
-      "Cloud computing, explained from first principles — what it actually is, why it matters, and where to start.",
+      "Cloud computing, explained from first principles: what it actually is, why it matters, and where to start.",
   },
 ];

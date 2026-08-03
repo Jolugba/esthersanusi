@@ -46,11 +46,11 @@ const APPS = [
     icon: "assets/apps/fairmoney.png", // square white launcher
     platforms: ["Android", "iOS"],
     overview:
-      "Building new features and maintaining the savings stack for Nigeria's leading digital bank — 10M+ downloads. Driving Kotlin Multiplatform adoption while raising reliability, analytics quality, and test coverage.",
+      "Building new features and maintaining the savings stack for Nigeria's leading digital bank, 10M+ downloads. Driving Kotlin Multiplatform adoption while raising reliability, analytics quality, and test coverage.",
     stack: ["Kotlin", "KMP", "Compose Multiplatform", "Coroutines", "Ktor", "CleverTap", "Customer.io"],
     highlights: [
       "10M+ downloads · used by millions",
-      "Owned the home screen for FairDollar — a new USD savings product (2025)",
+      "Owned the home screen for FairDollar, a new USD savings product (2025)",
       "Built FairDollar Help and remote-config-driven FAQs across all savings products",
       "Migrated 3 existing modules to KMP (2025); migrating SaversClub to KMP (2026)",
       "Building Fairlock pre-liquidation (2026)",
@@ -72,7 +72,7 @@ const APPS = [
     round: true,
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "AI-powered legal research for Nigerian lawyers — one Flutter codebase shipping to mobile AND desktop (Windows + macOS), so lawyers research from phone or workstation.",
+      "AI-powered legal research for Nigerian lawyers: one Flutter codebase shipping to mobile AND desktop (Windows + macOS), so lawyers research from phone or workstation.",
     stack: ["Flutter", "Dart", "REST", "AI/LLM", "Clean Architecture"],
     highlights: [
       "Cross-platform: Android, iOS, Windows, macOS from one codebase",
@@ -98,7 +98,7 @@ const APPS = [
     icon: "assets/apps/elite.png", // square white squircle launcher
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Premium legal-research product for senior practitioners — one Flutter codebase shipping across mobile and desktop (Windows + macOS). Part of the suite I led as team lead.",
+      "Premium legal-research product for senior practitioners: one Flutter codebase shipping across mobile and desktop (Windows + macOS). Part of the suite I led as team lead.",
     stack: ["Flutter", "Dart", "Clean Architecture", "REST", "Riverpod"],
     highlights: [
       "Premium legal research across mobile + desktop (Windows & macOS)",
@@ -125,7 +125,7 @@ const APPS = [
     icon: "assets/apps/elite.png", // shares the Elite launcher icon
     platforms: ["Android"], // TODO: confirm if also iOS/desktop
     overview:
-      "The admin companion to Lawpavilion Elite — manages the organisation's users for the Elite legal-research platform.",
+      "The admin companion to Lawpavilion Elite. It manages the organisation's users for the Elite legal-research platform.",
     stack: ["Kotlin", "MVVM", "Hilt", "Room"], // TODO: confirm the real stack
     highlights: [
       "Manages organisation users for Lawpavilion Elite",
@@ -146,12 +146,12 @@ const APPS = [
     icon: "assets/apps/prime.png", // navy square launcher (orange P)
     platforms: ["Android"],
     overview:
-      "Lawpavilion's flagship legal-research tool (native Android) — one of the first products I worked on. I co-led its Java→Kotlin migration and built its research and AI features.",
+      "Lawpavilion's flagship legal-research tool (native Android), one of the first products I worked on. I co-led its Java→Kotlin migration and built its research and AI features.",
     stack: ["Kotlin", "Java→Kotlin", "Lucene", "GPT / LLM", "Coroutines", "MVVM", "Room"],
     highlights: [
       "Co-led the full Java→Kotlin migration (15K+ lines, −80% NPEs); crash 4.2% → 0.8%",
       "Built My Research, all GPT features, and LPInsight",
-      "Optimized Lucene local search across 2021→2025 case data — relevance +60%",
+      "Optimized Lucene local search across 2021→2025 case data (relevance +60%)",
       "Cleared long-standing backlog bugs",
     ],
     links: {
@@ -168,7 +168,7 @@ const APPS = [
     icon: "assets/apps/moj.png", // full-bleed green square launcher (Casemanager MOJ)
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "A Ministry of Justice product built with Lawpavilion — digitising workflows for government legal teams across mobile and desktop (Windows + macOS) with a single Flutter codebase.",
+      "A Ministry of Justice product built with Lawpavilion. It digitises workflows for government legal teams across mobile and desktop (Windows + macOS) with a single Flutter codebase.",
     stack: ["Flutter", "Dart", "MVVM", "REST", "Clean Architecture"],
     highlights: [
       "Government Ministry of Justice deployment",
@@ -194,7 +194,7 @@ const APPS = [
     round: true,
     platforms: ["Android", "iOS", "Windows", "macOS"],
     overview:
-      "Court Justice Reporting Platform — structured reporting and case tracking for the justice system, delivered to mobile and desktop (Windows + macOS) from one Flutter codebase.",
+      "Court Justice Reporting Platform: structured reporting and case tracking for the justice system, delivered to mobile and desktop (Windows + macOS) from one Flutter codebase.",
     stack: ["Flutter", "Dart", "Clean Architecture", "REST"],
     highlights: [
       "Court reporting and case-tracking workflows",
@@ -219,7 +219,7 @@ const APPS = [
     round: true,
     platforms: ["Android"],
     overview:
-      "Authenticates Nigerian Bar Association (NBA) seals — scan a seal's barcode to verify a stamped document is genuine. Built for law firms and courts.",
+      "Authenticates Nigerian Bar Association (NBA) seals. Scan a seal's barcode to verify a stamped document is genuine. Built for law firms and courts.",
     stack: ["Kotlin", "Barcode scanning", "Jetpack Compose", "Hilt", "Room"],
     highlights: [
       "Barcode scanning to verify NBA seal authenticity",
@@ -263,7 +263,7 @@ const APPS = [
     icon: null, // TODO: add "assets/apps/healthfit.png"
     platforms: ["Android"],
     overview:
-      "Health facility inspections for the Lagos State Government — a contract product digitising field inspection workflows.",
+      "Health facility inspections for the Lagos State Government, a contract product digitising field inspection workflows.",
     stack: ["Kotlin", "MVVM", "Room", "Retrofit", "DataStore"],
     highlights: [
       "Lagos State Government contract",
@@ -284,7 +284,7 @@ const APPS = [
     icon: null, // TODO: add "assets/apps/tyia.png"
     platforms: ["Android"],
     overview:
-      "A conversational chatbot for Android with on-device and cloud ML integration — natural language interaction wired into a production app.",
+      "A conversational chatbot for Android with on-device and cloud ML integration. Natural language interaction wired into a production app.",
     stack: ["Kotlin", "ML integration", "Coroutines", "MVVM"],
     highlights: [
       "Conversational chatbot experience",

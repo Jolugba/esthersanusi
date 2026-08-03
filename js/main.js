@@ -267,7 +267,7 @@
             .join("") +
           `</div>`
         : app.wip
-        ? `<div class="detail__wip">🚧 In progress — building this internally, not public yet</div>`
+        ? `<div class="detail__wip">🚧 In progress: building this internally, not public yet</div>`
         : "";
       detail.innerHTML =
         `<div class="detail__bar">` +
@@ -445,8 +445,8 @@
           const firstName = String(data.get("name") || "").trim().split(/\s+/)[0];
           form.reset();
           status.textContent = firstName
-            ? `Yay, thank you ${firstName}! 💜 Your message just landed — I'll get back to you within a day.`
-            : "Yay, thank you! 💜 Your message just landed — I'll get back to you within a day.";
+            ? `Yay, thank you ${firstName}! 💜 Your message just landed. I'll get back to you within a day.`
+            : "Yay, thank you! 💜 Your message just landed. I'll get back to you within a day.";
           status.className = "contact__status is-ok";
         } else {
           throw new Error("bad response");
@@ -693,7 +693,7 @@
       const s1 = "font:600 22px 'Space Grotesk',sans-serif;color:#a06bff";
       const s2 = "font:13px ui-monospace,monospace;color:#c8c4d6";
       console.log("%cHi, curious one 👋", s1);
-      console.log("%cYou opened the console — that tells me something about you.\nI'm Esther: I build mobile tech that works, and I'm moving into data science & AI.\nIf you're hiring or want to collaborate: jolugbatinuade@gmail.com\nTip: press ⌘K (or Ctrl+K) anywhere on this page.", s2);
+      console.log("%cYou opened the console. That tells me something about you.\nI'm Esther: I build mobile tech that works, and I'm moving into data science & AI.\nIf you're hiring or want to collaborate: jolugbatinuade@gmail.com\nTip: press ⌘K (or Ctrl+K) anywhere on this page.", s2);
     } catch (_) {}
   })();
 
