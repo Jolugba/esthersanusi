@@ -11,6 +11,9 @@
   --accent-2: #c98bff;
   --accent-soft: rgba(160, 107, 255, 0.16);
   --accent-glow: rgba(160, 107, 255, 0.42);
+  /* Deeper shade for solid button fills — white text on --accent is only 3.48:1
+     (fails WCAG AA's 4.5:1 for normal text); this hits 6.55:1. */
+  --accent-btn: #6b19ff;
 
   /* Dark theme (default) — subtle purple undertone */
   --bg: #0a0812;
@@ -105,7 +108,7 @@ svg { stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linej
   will-change: transform;
 }
 .btn--sm { padding: 0.55rem 1rem; font-size: 0.85rem; }
-.btn--primary { background: var(--accent); color: #fff; box-shadow: 0 8px 30px -8px var(--accent-glow); }
+.btn--primary { background: var(--accent-btn); color: #fff; box-shadow: 0 8px 30px -8px var(--accent-glow); }
 .btn--primary:hover { box-shadow: 0 12px 40px -8px var(--accent-glow); }
 .btn--ghost { border: 1px solid var(--border-strong); color: var(--text); }
 .btn--ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
@@ -385,7 +388,7 @@ kbd { font-family: var(--font-mono); font-size: 0.78rem; background: var(--surfa
   transition: transform 0.2s var(--ease), background 0.2s;
 }
 /* primary = first store button; the rest are quieter outlines */
-.detail__open:first-child { background: var(--accent); color: #fff; }
+.detail__open:first-child { background: var(--accent-btn); color: #fff; }
 .detail__open:not(:first-child) { background: rgba(255,255,255,0.05); color: #e6e6ef; border: 1px solid var(--border-strong); }
 .detail__open svg { stroke: currentColor; }
 .detail__open:hover { transform: scale(1.02); }
